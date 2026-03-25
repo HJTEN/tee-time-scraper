@@ -9,88 +9,136 @@ const supabase = createClient(
 
 const clubs = JSON.parse(fs.readFileSync("./clubs.json", "utf8"));
 
-async function scrapeClub(browser, club) {
+function extractProvider(url) {
+  const u = (url || "").toLowerCase();
+  if (u.includes("brsgolf")) return "brs";
+  if (u.includes("intelligentgolf")) return "intelligentgolf";
+  if (u.includes("clubv1")) return "clubv1";
+  return "generic";
+}
 
+async function extractRows(page, club) {
+  const provider = extractProvider(club["Booking URL"]);
+
+  if (provider === "brs") {
+    return await page.evaluate((club) => {
+      const rows = [];
+      const seen = new Set();
+      const all = Array.from(document.querySelectorAll("*"));
+
+      for (const el of all) {
+        const text = (el.innerText || "").trim();
+        if (!text) continue;
+
+        const timeMatch = text.match(/\b\d{1,2}:\d{2}(?:\s?[AP]M)?\b/i);
+        if (!timeMatch) continue;
+
+        const priceMatch = text.match(/[£$€]\s?\d+(?:\.\d{1,2})?/);
+        const spotsMatch = text.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
+
+        const key = `${timeMatch[0]}-${priceMatch ? priceMatch[0] : ""}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        rows.push({
+          course_name: club["Club name"],
+          tee_sheet_url: club["Booking URL"],
+          tee_time: timeMatch[0],
+          price: priceMatch ? priceMatch[0].replace(/\s+/g, "") : null,
+          spots_available: spotsMatch ? Number(spotsMatch[1]) : null,
+          date: new Date().toISOString().slice(0, 10),
+          scraped_at: new Date().toISOString()
+        });
+      }
+
+      return rows;
+    }, club);
+  }
+
+  if (provider === "intelligentgolf" || provider === "clubv1") {
+    return await page.evaluate((club) => {
+      const rows = [];
+      const seen = new Set();
+      const all = Array.from(document.querySelectorAll("*"));
+
+      for (const el of all) {
+        const text = (el.innerText || "").trim();
+        if (!text) continue;
+
+        const timeMatch = text.match(/\b\d{1,2}:\d{2}(?:\s?[AP]M)?\b/i);
+        if (!timeMatch) continue;
+
+        const priceMatch = text.match(/[£$€]\s?\d+(?:\.\d{1,2})?/);
+
+        const key = `${timeMatch[0]}-${priceMatch ? priceMatch[0] : ""}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        rows.push({
+          course_name: club["Club name"],
+          tee_sheet_url: club["Booking URL"],
+          tee_time: timeMatch[0],
+          price: priceMatch ? priceMatch[0].replace(/\s+/g, "") : null,
+          spots_available: null,
+          date: new Date().toISOString().slice(0, 10),
+          scraped_at: new Date().toISOString()
+        });
+      }
+
+      return rows;
+    }, club);
+  }
+
+  return [];
+}
+
+async function scrapeClub(browser, club) {
   const page = await browser.newPage();
 
-  console.log("Scraping:", club["Club name"]);
-
   try {
-
+    console.log(`Scraping ${club["Club name"]}`);
     await page.goto(club["Booking URL"], {
-      waitUntil: "domcontentloaded",
+      waitUntil: "networkidle",
       timeout: 60000
     });
 
-    const slots = await page.evaluate(() => {
+    await page.waitForTimeout(4000);
 
-      const results = [];
-      const elements = document.querySelectorAll("*");
+    const rows = await extractRows(page, club);
 
-      elements.forEach(el => {
+    console.log(`Found ${rows.length} rows for ${club["Club name"]}`);
 
-        const text = el.innerText;
+    if (!rows.length) return;
 
-        if (!text) return;
+    const { error } = await supabase.from("tee_times").insert(rows);
 
-        const timeMatch = text.match(/\b\d{1,2}:\d{2}\b/);
-
-        if (!timeMatch) return;
-
-        const priceMatch = text.match(/£\d+/);
-
-        results.push({
-          time: timeMatch[0],
-          price: priceMatch ? priceMatch[0].replace("£","") : null
-        });
-
-      });
-
-      return results;
-
-    });
-
-    const seen = new Set();
-
-    for (const slot of slots) {
-
-      if (seen.has(slot.time)) continue;
-      seen.add(slot.time);
-
-      await supabase.from("tee_times").insert({
-        club_name: club["Club name"],
-        tee_time: slot.time,
-        price: slot.price,
-        captured_at: new Date()
-      });
-
+    if (error) {
+      console.error(`Insert failed for ${club["Club name"]}: ${error.message}`);
     }
-
   } catch (err) {
-
-    console.log("Failed:", club["Club name"]);
-
+    console.error(`Failed ${club["Club name"]}: ${err.message}`);
+  } finally {
+    await page.close();
   }
-
-  await page.close();
 }
 
 async function run() {
+  const browser = await chromium.launch({ headless: true });
 
-  const browser = await chromium.launch({
-    headless: true
-  });
+  const sample = clubs.filter(
+    c =>
+      c["Booking URL"] &&
+      c["Booking URL"] !== "N/A" &&
+      (
+        c["Booking URL"].includes("brsgolf") ||
+        c["Booking URL"].includes("intelligentgolf") ||
+        c["Booking URL"].includes("clubv1")
+      )
+  ).slice(0, 20);
 
-  for (const club of clubs) {
-
-    const url = club["Booking URL"];
-
-    if (!url || url === "N/A") continue;
-
+  for (const club of sample) {
     await scrapeClub(browser, club);
-
     await new Promise(r => setTimeout(r, 4000));
-
   }
 
   await browser.close();
