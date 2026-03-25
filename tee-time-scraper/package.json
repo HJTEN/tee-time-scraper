@@ -1,8 +1,0 @@
-{
-  "name": "tee-time-scraper",
-  "type": "module",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.39.0",
-    "playwright": "^1.42.0"
-  }
-}
