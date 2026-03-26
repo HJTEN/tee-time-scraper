@@ -19,7 +19,7 @@ jobs:
       - run: node scrape.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_KEY }}
           BATCH_SIZE: "10"
           CONCURRENCY: "3"
           PER_COURSE_DELAY_MS: "4000"
