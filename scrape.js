@@ -10,6 +10,9 @@ const BATCH_SIZE = Number(process.env.BATCH_SIZE || 10);
 const CONCURRENCY = Number(process.env.CONCURRENCY || 3);
 const PER_COURSE_DELAY_MS = Number(process.env.PER_COURSE_DELAY_MS || 4000);
 const DAYS_AHEAD = Number(process.env.DAYS_AHEAD || 7);
+const COURSE_LIMIT = Number(process.env.COURSE_LIMIT || 50);
+const COURSE_OFFSET = Number(process.env.COURSE_OFFSET || 0);
+const CACHE_HOURS = Number(process.env.CACHE_HOURS || 6);
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -31,34 +34,16 @@ function chunk(array, size) {
 
 function detectProvider(url) {
   const u = (url || "").toLowerCase();
-
   if (u.includes("brsgolf")) return "brs";
   if (u.includes("intelligentgolf")) return "intelligentgolf";
   if (u.includes("clubv1")) return "clubv1";
-
   return "generic";
-}
-
-function normalisePrice(text) {
-  const match = text.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
-  return match ? match[0].replace(/\s+/g, "") : null;
-}
-
-function normaliseTime(text) {
-  const match = text.match(/\b\d{1,2}:\d{2}(?:\s?[AP]M)?\b/i);
-  return match ? match[0].toUpperCase() : null;
-}
-
-function normaliseSpots(text) {
-  const match = text.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
-  return match ? Number(match[1]) : null;
 }
 
 async function extractByDom(page) {
   return await page.evaluate(() => {
     const seen = new Set();
     const rows = [];
-
     const nodes = Array.from(document.querySelectorAll("*"));
 
     for (const node of nodes) {
@@ -72,7 +57,6 @@ async function extractByDom(page) {
       const spotsMatch = text.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
 
       const key = `${timeMatch[0]}|${priceMatch ? priceMatch[0] : ""}|${spotsMatch ? spotsMatch[1] : ""}`;
-
       if (seen.has(key)) continue;
       seen.add(key);
 
@@ -86,6 +70,31 @@ async function extractByDom(page) {
 
     return rows;
   });
+}
+
+async function shouldScrapeDate(courseId, date) {
+  const { data, error } = await supabase
+    .from("tee_times")
+    .select("scraped_at")
+    .eq("course_id", courseId)
+    .eq("date", date)
+    .order("scraped_at", { ascending: false })
+    .limit(1);
+
+  if (error) {
+    console.error(`Cache check failed for ${courseId} ${date}:`, error.message);
+    return true;
+  }
+
+  if (!data || data.length === 0) {
+    return true;
+  }
+
+  const lastScraped = new Date(data[0].scraped_at);
+  const now = new Date();
+  const hoursOld = (now - lastScraped) / (1000 * 60 * 60);
+
+  return hoursOld > CACHE_HOURS;
 }
 
 async function scrapeCourseDate(browser, course, date) {
@@ -115,7 +124,7 @@ async function scrapeCourseDate(browser, course, date) {
       raw_payload: row
     }));
   } catch (err) {
-    console.error(`Failed ${course.name} ${date}`, err.message);
+    console.error(`Failed ${course.name} ${date}: ${err.message}`);
     return [];
   } finally {
     await page.close();
@@ -126,7 +135,6 @@ async function upsertRows(rows) {
   if (!rows.length) return;
 
   const map = new Map();
-
   for (const row of rows) {
     const key = `${row.course_name}-${row.tee_time}-${row.date}`;
     if (!map.has(key)) map.set(key, row);
@@ -146,21 +154,29 @@ async function upsertRows(rows) {
 }
 
 async function markCourseScraped(courseId) {
-  await supabase
+  const { error } = await supabase
     .from("golf_courses")
     .update({ last_scraped: new Date().toISOString() })
     .eq("id", courseId);
+
+  if (error) {
+    console.error("markCourseScraped error:", error.message);
+  }
 }
 
 async function processCourse(browser, course, dates) {
-  let allRows = [];
+  const allRows = [];
 
   for (const date of dates) {
-    const rows = await scrapeCourseDate(browser, course, date);
+    const shouldScrape = await shouldScrapeDate(course.id, date);
 
-    if (rows.length) {
-      allRows.push(...rows);
+    if (!shouldScrape) {
+      console.log(`Skipping ${course.name} ${date} (fresh cache)`);
+      continue;
     }
+
+    const rows = await scrapeCourseDate(browser, course, date);
+    if (rows.length) allRows.push(...rows);
 
     await sleep(1000);
   }
@@ -169,7 +185,6 @@ async function processCourse(browser, course, dates) {
   await markCourseScraped(course.id);
 
   console.log(`${course.name}: ${allRows.length} rows`);
-
   await sleep(PER_COURSE_DELAY_MS);
 }
 
@@ -197,23 +212,20 @@ async function fetchCourses() {
     process.exit(1);
   }
 
-  return data;
+  const sliced = data.slice(COURSE_OFFSET, COURSE_OFFSET + COURSE_LIMIT);
+  console.log(`Loaded ${sliced.length} courses (offset ${COURSE_OFFSET}, limit ${COURSE_LIMIT})`);
+  return sliced;
 }
 
 async function main() {
   const dates = nextDates(DAYS_AHEAD);
-
   const courses = await fetchCourses();
-
   const batches = chunk(courses, BATCH_SIZE);
 
   for (let i = 0; i < batches.length; i += CONCURRENCY) {
     const slice = batches.slice(i, i + CONCURRENCY);
-
     await Promise.all(
-      slice.map((batch, idx) =>
-        runWorker(batch, dates, i + idx + 1)
-      )
+      slice.map((batch, idx) => runWorker(batch, dates, i + idx + 1))
     );
   }
 }
