@@ -11,16 +11,29 @@ jobs:
     timeout-minutes: 110
     strategy:
       fail-fast: false
+      max-parallel: 5
       matrix:
         include:
           - offset: 0
-            limit: 40
-          - offset: 40
-            limit: 40
-          - offset: 80
-            limit: 40
-          - offset: 120
-            limit: 40
+            limit: 50
+          - offset: 50
+            limit: 50
+          - offset: 100
+            limit: 50
+          - offset: 150
+            limit: 50
+          - offset: 200
+            limit: 50
+          - offset: 250
+            limit: 50
+          - offset: 300
+            limit: 50
+          - offset: 350
+            limit: 50
+          - offset: 400
+            limit: 50
+          - offset: 450
+            limit: 50
 
     steps:
       - name: Checkout repo
