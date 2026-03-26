@@ -3,7 +3,7 @@ name: Scrape Tee Times
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 4 * * *"
 
 jobs:
   scrape:
@@ -58,7 +58,7 @@ jobs:
           BATCH_SIZE: "5"
           CONCURRENCY: "2"
           PER_COURSE_DELAY_MS: "2500"
-          DAYS_AHEAD: "3"
+          DAYS_AHEAD: "6"
           CACHE_HOURS: "24"
           COURSE_OFFSET: ${{ matrix.offset }}
           COURSE_LIMIT: ${{ matrix.limit }}
