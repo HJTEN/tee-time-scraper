@@ -1,3 +1,4 @@
+import fs from "fs";
 import { chromium } from "playwright";
 import { createClient } from "@supabase/supabase-js";
 
@@ -44,7 +45,7 @@ function dedupeRows(rows) {
   const map = new Map();
 
   for (const row of rows) {
-    const key = `${row.course_id}|${row.tee_time}|${row.date}`;
+    const key = `${row.course_name}|${row.tee_time}|${row.date}`;
     const existing = map.get(key);
 
     if (!existing) {
@@ -94,64 +95,6 @@ function parseSpots(raw) {
   if (!raw) return null;
   const match = raw.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
   return match ? Number(match[1]) : null;
-}
-
-async function shouldScrapeDate(courseId, date) {
-  const { data, error } = await supabase
-    .from("tee_times")
-    .select("scraped_at")
-    .eq("course_id", courseId)
-    .eq("date", date)
-    .order("scraped_at", { ascending: false })
-    .limit(1);
-
-  if (error) {
-    console.error(`Cache check failed for ${courseId} ${date}: ${error.message}`);
-    return true;
-  }
-
-  if (!data || data.length === 0) return true;
-
-  const lastScraped = new Date(data[0].scraped_at);
-  const now = new Date();
-  const hoursOld = (now - lastScraped) / (1000 * 60 * 60);
-
-  return hoursOld > CACHE_HOURS;
-}
-
-async function extractByDom(page) {
-  return await page.evaluate(() => {
-    const rows = [];
-    const seen = new Set();
-    const nodes = Array.from(document.querySelectorAll("*"));
-
-    for (const node of nodes) {
-      const text = (node.innerText || "").trim();
-      if (!text) continue;
-      if (text.length > 200) continue;
-
-      const timeMatch = text.match(/\b\d{1,2}:\d{2}(?:\s?[AP]M)?\b/i);
-      if (!timeMatch) continue;
-
-      const priceMatch = text.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
-      const spotsMatch = text.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
-
-      if (!priceMatch && !spotsMatch) continue;
-
-      const key = `${timeMatch[0]}|${priceMatch ? priceMatch[0] : ""}|${spotsMatch ? spotsMatch[1] : ""}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-
-      rows.push({
-        tee_time_raw: timeMatch[0],
-        price_raw: priceMatch ? priceMatch[0] : null,
-        spots_raw: spotsMatch ? spotsMatch[0] : null,
-        raw: text
-      });
-    }
-
-    return rows;
-  });
 }
 
 function tryParseJsonText(text) {
@@ -213,26 +156,6 @@ function walkJson(value, rows = []) {
   return rows;
 }
 
-async function extractFromCapturedResponses(page) {
-  const captured = page.__capturedResponses || [];
-  const rows = [];
-
-  for (const item of captured) {
-    const parsed = tryParseJsonText(item.body);
-    if (!parsed) continue;
-
-    const found = walkJson(parsed);
-    for (const row of found) {
-      rows.push({
-        ...row,
-        response_url: item.url
-      });
-    }
-  }
-
-  return rows;
-}
-
 function normaliseExtractedRows(rawRows) {
   const out = [];
 
@@ -264,6 +187,61 @@ function normaliseExtractedRows(rawRows) {
   }
 
   return out;
+}
+
+async function extractByDom(page) {
+  return await page.evaluate(() => {
+    const rows = [];
+    const seen = new Set();
+    const nodes = Array.from(document.querySelectorAll("*"));
+
+    for (const node of nodes) {
+      const text = (node.innerText || "").trim();
+      if (!text) continue;
+      if (text.length > 200) continue;
+
+      const timeMatch = text.match(/\b\d{1,2}:\d{2}(?:\s?[AP]M)?\b/i);
+      if (!timeMatch) continue;
+
+      const priceMatch = text.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
+      const spotsMatch = text.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
+
+      if (!priceMatch && !spotsMatch) continue;
+
+      const key = `${timeMatch[0]}|${priceMatch ? priceMatch[0] : ""}|${spotsMatch ? spotsMatch[1] : ""}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      rows.push({
+        tee_time_raw: timeMatch[0],
+        price_raw: priceMatch ? priceMatch[0] : null,
+        spots_raw: spotsMatch ? spotsMatch[0] : null,
+        raw: text
+      });
+    }
+
+    return rows;
+  });
+}
+
+async function extractFromCapturedResponses(page) {
+  const captured = page.__capturedResponses || [];
+  const rows = [];
+
+  for (const item of captured) {
+    const parsed = tryParseJsonText(item.body);
+    if (!parsed) continue;
+
+    const found = walkJson(parsed);
+    for (const row of found) {
+      rows.push({
+        ...row,
+        response_url: item.url
+      });
+    }
+  }
+
+  return rows;
 }
 
 async function setDateIfPresent(page, date) {
@@ -301,9 +279,9 @@ function buildDateUrl(url, provider, date) {
   return url;
 }
 
-async function scrapeBRS(page, date) {
+async function scrapeProvider(page, provider, date) {
   await page.waitForLoadState("domcontentloaded");
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(provider === "intelligentgolf" ? 3500 : 3000);
   await setDateIfPresent(page, date);
 
   const responseRows = await extractFromCapturedResponses(page);
@@ -312,37 +290,51 @@ async function scrapeBRS(page, date) {
   return normaliseExtractedRows([...responseRows, ...domRows]);
 }
 
-async function scrapeIntelligentGolf(page, date) {
-  await page.waitForLoadState("domcontentloaded");
-  await page.waitForTimeout(3500);
-  await setDateIfPresent(page, date);
+async function ensureGolfCourse(course) {
+  const { data: existing, error: readError } = await supabase
+    .from("golf_courses")
+    .select("id,name,tee_sheet_url,last_scraped")
+    .eq("name", course.name)
+    .eq("tee_sheet_url", course.tee_sheet_url)
+    .limit(1);
 
-  const responseRows = await extractFromCapturedResponses(page);
-  const domRows = await extractByDom(page);
+  if (readError) throw readError;
+  if (existing && existing.length > 0) return existing[0];
 
-  return normaliseExtractedRows([...responseRows, ...domRows]);
+  const { data: inserted, error: insertError } = await supabase
+    .from("golf_courses")
+    .insert({
+      name: course.name,
+      tee_sheet_url: course.tee_sheet_url
+    })
+    .select("id,name,tee_sheet_url,last_scraped")
+    .single();
+
+  if (insertError) throw insertError;
+  return inserted;
 }
 
-async function scrapeClubV1(page, date) {
-  await page.waitForLoadState("domcontentloaded");
-  await page.waitForTimeout(3000);
-  await setDateIfPresent(page, date);
+async function shouldScrapeDate(courseId, date) {
+  const { data, error } = await supabase
+    .from("tee_times")
+    .select("scraped_at")
+    .eq("course_id", courseId)
+    .eq("date", date)
+    .order("scraped_at", { ascending: false })
+    .limit(1);
 
-  const responseRows = await extractFromCapturedResponses(page);
-  const domRows = await extractByDom(page);
+  if (error) {
+    console.error(`Cache check failed for ${courseId} ${date}:`, error.message);
+    return true;
+  }
 
-  return normaliseExtractedRows([...responseRows, ...domRows]);
-}
+  if (!data || data.length === 0) return true;
 
-async function scrapeGeneric(page, date) {
-  await page.waitForLoadState("domcontentloaded");
-  await page.waitForTimeout(3000);
-  await setDateIfPresent(page, date);
+  const lastScraped = new Date(data[0].scraped_at);
+  const now = new Date();
+  const hoursOld = (now - lastScraped) / (1000 * 60 * 60);
 
-  const responseRows = await extractFromCapturedResponses(page);
-  const domRows = await extractByDom(page);
-
-  return normaliseExtractedRows([...responseRows, ...domRows]);
+  return hoursOld > CACHE_HOURS;
 }
 
 async function scrapeCourseDate(browser, course, date) {
@@ -374,17 +366,7 @@ async function scrapeCourseDate(browser, course, date) {
       timeout: 60000
     });
 
-    let rows = [];
-
-    if (provider === "brs") {
-      rows = await scrapeBRS(page, date);
-    } else if (provider === "intelligentgolf") {
-      rows = await scrapeIntelligentGolf(page, date);
-    } else if (provider === "clubv1") {
-      rows = await scrapeClubV1(page, date);
-    } else {
-      rows = await scrapeGeneric(page, date);
-    }
+    const rows = await scrapeProvider(page, provider, date);
 
     return rows.map((row) => ({
       course_id: course.id,
@@ -433,7 +415,35 @@ async function markCourseScraped(courseId) {
   }
 }
 
-async function processCourse(browser, course, dates) {
+function loadCoursesFromJson() {
+  const raw = JSON.parse(fs.readFileSync("./clubs.json", "utf8"));
+
+  const courses = raw
+    .map((row, index) => ({
+      source_index: index,
+      name: (row["Club name"] || "").trim(),
+      tee_sheet_url: (row["Booking URL"] || "").trim()
+    }))
+    .filter((row) => row.name && row.tee_sheet_url && row.tee_sheet_url !== "N/A");
+
+  const sliced = courses.slice(COURSE_OFFSET, COURSE_OFFSET + COURSE_LIMIT);
+
+  console.log(
+    `Loaded ${sliced.length} JSON rows (offset ${COURSE_OFFSET}, limit ${COURSE_LIMIT}) from ${courses.length} valid rows`
+  );
+
+  return sliced;
+}
+
+async function processCourse(browser, rawCourse, dates) {
+  let course;
+  try {
+    course = await ensureGolfCourse(rawCourse);
+  } catch (err) {
+    console.error(`Failed to ensure golf_course for ${rawCourse.name}: ${err.message}`);
+    return;
+  }
+
   const allRows = [];
 
   for (const date of dates) {
@@ -470,28 +480,9 @@ async function runWorker(courses, dates, workerId) {
   }
 }
 
-async function fetchCourses() {
-  const from = COURSE_OFFSET;
-  const to = COURSE_OFFSET + COURSE_LIMIT - 1;
-
-  const { data, error } = await supabase
-    .from("golf_courses")
-    .select("id,name,tee_sheet_url")
-    .order("created_at")
-    .range(from, to);
-
-  if (error) {
-    console.error(error);
-    process.exit(1);
-  }
-
-  console.log(`Loaded ${data.length} courses (offset ${COURSE_OFFSET}, limit ${COURSE_LIMIT})`);
-  return data;
-}
-
 async function main() {
   const dates = nextDates(DAYS_AHEAD);
-  const courses = await fetchCourses();
+  const courses = loadCoursesFromJson();
   const batches = chunk(courses, BATCH_SIZE);
 
   for (let i = 0; i < batches.length; i += CONCURRENCY) {
