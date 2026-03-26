@@ -1,8 +1,0 @@
-{
-  "name": "tee-time-monitor",
-  "type": "module",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.50.0",
-    "playwright": "^1.52.0"
-  }
-}
