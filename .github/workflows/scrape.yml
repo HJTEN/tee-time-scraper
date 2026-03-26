@@ -8,19 +8,44 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - offset: 0
+            limit: 40
+          - offset: 40
+            limit: 40
+          - offset: 80
+            limit: 40
+          - offset: 120
+            limit: 40
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
-      - run: npx playwright install --with-deps chromium
-      - run: node scrape.js
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scraper
+        run: node scrape.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_KEY }}
-          BATCH_SIZE: "10"
-          CONCURRENCY: "3"
-          PER_COURSE_DELAY_MS: "4000"
-          DAYS_AHEAD: "7"
+          BATCH_SIZE: "5"
+          CONCURRENCY: "2"
+          PER_COURSE_DELAY_MS: "2500"
+          DAYS_AHEAD: "3"
+          CACHE_HOURS: "24"
+          COURSE_OFFSET: ${{ matrix.offset }}
+          COURSE_LIMIT: ${{ matrix.limit }}
