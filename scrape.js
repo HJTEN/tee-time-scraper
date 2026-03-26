@@ -1,6 +1,5 @@
 // scrape.js
 import { createClient } from "@supabase/supabase-js";
-import fs from "fs/promises";
 
 // -----------------------------
 // ENV
@@ -23,9 +22,6 @@ const DRY_RUN = String(process.env.DRY_RUN || "false").toLowerCase() === "true";
 const FORCE_REFRESH = String(process.env.FORCE_REFRESH || "false").toLowerCase() === "true";
 const MAX_CLUBS = Number(process.env.MAX_CLUBS || 0); // 0 = no cap
 const FRESHNESS_HOURS = Number(process.env.FRESHNESS_HOURS || 24);
-
-// Paths
-const CLUBS_FILE = process.env.CLUBS_FILE || "./src/data/clubs-enriched.json";
 
 // -----------------------------
 // HELPERS
@@ -73,14 +69,28 @@ function groupBy(arr, keyFn) {
 }
 
 async function loadClubs() {
-  const raw = await fs.readFile(CLUBS_FILE, "utf8");
-  const parsed = JSON.parse(raw);
+  const pageSize = 1000;
+  let from = 0;
+  const allRows = [];
 
-  if (!Array.isArray(parsed)) {
-    throw new Error(`Expected ${CLUBS_FILE} to contain an array`);
+  while (true) {
+    const { data, error } = await supabase
+      .from("clubs")
+      .select("*")
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      throw new Error(`Failed to load clubs from Supabase: ${error.message}`);
+    }
+
+    const rows = data || [];
+    allRows.push(...rows);
+
+    if (rows.length < pageSize) break;
+    from += pageSize;
   }
 
-  const clubs = parsed
+  const clubs = allRows
     .filter(Boolean)
     .map((club, index) => ({
       ...club,
@@ -100,7 +110,6 @@ async function loadClubs() {
 async function fetchFreshnessMap(clubKeys) {
   if (!clubKeys.length) return new Map();
 
-  // If your table is large, chunk this query.
   const pageSize = 500;
   const rows = [];
 
@@ -230,7 +239,14 @@ async function main() {
   for (let i = 0; i < shardClubs.length; i++) {
     const club = shardClubs[i];
     const clubKey = club.__clubKey;
-    const bookingUrl = club.booking_url || club.bookingUrl || club.website || null;
+    const bookingUrl =
+      club.booking_url ||
+      club.bookingUrl ||
+      club.booking_link ||
+      club.bookingLink ||
+      club.website ||
+      club.url ||
+      null;
     const existing = freshnessMap.get(clubKey);
 
     console.log(
