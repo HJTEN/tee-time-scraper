@@ -169,15 +169,32 @@ function dedupeRows(rows) {
 
 function normaliseTime(raw) {
   if (!raw) return null;
-  const value = raw.replace(/\s+/g, " ").trim().toUpperCase();
+  const value = raw.replace(/\s+/g, " ").trim();
+
+  // Must be exactly HH:MM or H:MM with optional AM/PM — no surrounding text
   const m = value.match(/^(\d{1,2}):(\d{2})(?:\s?(AM|PM))?$/i);
   if (!m) return null;
+
   let hour = Number(m[1]);
-  const minute = m[2];
+  const minute = Number(m[2]);
   const meridiem = m[3] ? m[3].toUpperCase() : null;
+
   if (meridiem === "PM" && hour < 12) hour += 12;
   if (meridiem === "AM" && hour === 12) hour = 0;
-  return `${String(hour).padStart(2, "0")}:${minute}`;
+
+  // Hard range gates — impossible clock values
+  if (hour > 23 || minute > 59) return null;
+
+  // No golf course opens before 5am or after 9pm
+  if (hour < 5 || hour > 21) return null;
+
+  // Tee times always fall on standard booking intervals (5, 7, 8, 10, 12, 15 min).
+  // Anything else (e.g. :18, :37, :51) is a price or distance leaking through.
+  const validMinutes = new Set([0, 5, 7, 8, 10, 12, 14, 15, 20, 21, 24, 25, 28,
+    30, 35, 36, 40, 42, 45, 48, 49, 50, 56]);
+  if (!validMinutes.has(minute)) return null;
+
+  return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
 }
 
 function normalisePrice(raw) {
@@ -243,27 +260,124 @@ function normaliseExtractedRows(rawRows) {
 
 async function extractByDom(page) {
   return await page.evaluate(() => {
+
+    // ── Helpers ──────────────────────────────────────────────────────────────
+
+    function looksLikeTeeTime(str) {
+      // Must be a bare HH:MM or H:MM AM/PM with no surrounding digits
+      // Rejects decimals like 58.51 rendered without currency symbol
+      return /^(\d{1,2}):(\d{2})(\s?(AM|PM))?$/i.test(str.trim());
+    }
+
+    function extractTime(text) {
+      // Only match times that appear as standalone tokens, not inside longer numbers
+      const m = text.match(/(?<![.\d])(\d{1,2}:\d{2}(?:\s?[AP]M)?)(?![.\d])/i);
+      return m ? m[1].trim() : null;
+    }
+
+    function extractPrice(text) {
+      const m = text.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
+      return m ? m[0].replace(/\s+/g, "") : null;
+    }
+
+    function extractSpots(text) {
+      const m = text.match(/\b([1-4])\s+(?:spots?|players?|balls?|spaces?)\b/i);
+      return m ? m[0] : null;
+    }
+
+    function isLeafOrNearLeaf(el) {
+      // Avoid scanning container nodes that just aggregate child text —
+      // those produce duplicates and mixed-context false positives.
+      // Accept nodes that have at most 2 element children.
+      return el.children.length <= 2;
+    }
+
+    function isInTeeTimeContext(el) {
+      // Walk up the DOM looking for a container that signals tee time content.
+      // Bail out after 6 levels to stay fast.
+      const signals = /tee|booking|slot|time|available|round|fee|rate|green/i;
+      let node = el.parentElement;
+      for (let i = 0; i < 6 && node; i++) {
+        const cls = (node.className || "");
+        const id = (node.id || "");
+        if (signals.test(cls) || signals.test(id)) return true;
+        node = node.parentElement;
+      }
+      return false;
+    }
+
+    // ── Main scan ─────────────────────────────────────────────────────────────
+
     const rows = [];
     const seen = new Set();
-    const nodes = Array.from(document.querySelectorAll("*"));
-    for (const node of nodes) {
-      const text = (node.innerText || "").trim();
-      if (!text || text.length > 200) continue;
-      const timeMatch = text.match(/\b\d{1,2}:\d{2}(?:\s?[AP]M)?\b/i);
-      if (!timeMatch) continue;
-      const priceMatch = text.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
-      const spotsMatch = text.match(/\b([1-4])\s+(?:spots|players|balls?)\b/i);
-      if (!priceMatch && !spotsMatch) continue;
-      const key = `${timeMatch[0]}|${priceMatch ? priceMatch[0] : ""}|${spotsMatch ? spotsMatch[1] : ""}`;
+
+    // Strategy 1: structured row scan
+    // Look for elements that contain both a time and a price/spots signal
+    // within a tight character budget, and are near-leaf nodes.
+    const candidates = Array.from(document.querySelectorAll(
+      "tr, li, [class*='slot'], [class*='tee'], [class*='time'], [class*='row'], [class*='item'], [class*='booking'], [class*='available']"
+    ));
+
+    for (const el of candidates) {
+      if (!isLeafOrNearLeaf(el)) continue;
+
+      const text = (el.innerText || "").replace(/\s+/g, " ").trim();
+      if (!text || text.length > 300) continue;
+
+      const timeRaw = extractTime(text);
+      if (!timeRaw || !looksLikeTeeTime(timeRaw)) continue;
+
+      const price = extractPrice(text);
+      const spots = extractSpots(text);
+
+      // Require at least one of price or spots to confirm this is a tee time row
+      if (!price && !spots) continue;
+
+      const key = `${timeRaw}|${price || ""}|${spots || ""}`;
       if (seen.has(key)) continue;
       seen.add(key);
+
       rows.push({
-        tee_time_raw: timeMatch[0],
-        price_raw: priceMatch ? priceMatch[0] : null,
-        spots_raw: spotsMatch ? spotsMatch[0] : null,
+        tee_time_raw: timeRaw,
+        price_raw: price,
+        spots_raw: spots,
         raw: text,
       });
     }
+
+    // Strategy 2: contextual fallback
+    // For pages where times and prices are in separate sibling elements,
+    // scan all near-leaf text nodes but require a tee-time DOM context signal.
+    if (rows.length === 0) {
+      const allNodes = Array.from(document.querySelectorAll("*"));
+      for (const node of allNodes) {
+        if (!isLeafOrNearLeaf(node)) continue;
+
+        const text = (node.innerText || "").replace(/\s+/g, " ").trim();
+        if (!text || text.length > 150) continue;
+
+        const timeRaw = extractTime(text);
+        if (!timeRaw || !looksLikeTeeTime(timeRaw)) continue;
+
+        // In fallback mode, require the element to be inside a tee-time-shaped container
+        if (!isInTeeTimeContext(node)) continue;
+
+        const price = extractPrice(text);
+        const spots = extractSpots(text);
+
+        const key = `${timeRaw}|${price || ""}|${spots || ""}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        rows.push({
+          tee_time_raw: timeRaw,
+          price_raw: price,
+          spots_raw: spots,
+          raw: text,
+        });
+      }
+    }
+
     return rows;
   });
 }
