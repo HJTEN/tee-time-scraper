@@ -44,7 +44,7 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps chromium
 
-      - name: Run scraper (shard ${{ matrix.offset }}-${{ matrix.offset + matrix.limit }})
+      - name: Run scraper (offset ${{ matrix.offset }}, limit ${{ matrix.limit }})
         run: node scrape.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
