@@ -91,6 +91,26 @@ function detectProvider(url) {
   return "generic";
 }
 
+// ─── URL normalisation ────────────────────────────────────────────────────────
+
+/**
+ * Strip UTM and referral params before processing — they add noise to
+ * provider detection, date injection, and cache keys without adding value.
+ */
+function stripTrackingParams(url) {
+  try {
+    const u = new URL(url);
+    const remove = [];
+    for (const key of u.searchParams.keys()) {
+      if (/^utm_|^ref$|^a_aid$|^_g[al]/i.test(key)) remove.push(key);
+    }
+    remove.forEach((k) => u.searchParams.delete(k));
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 // ─── Date URL injection ───────────────────────────────────────────────────────
 
 function buildDateUrl(url, provider, date) {
@@ -465,7 +485,7 @@ async function setEspDate(page, date) {
 
 const PROVIDER_WAIT_MS = {
   brs: 4000,
-  intelligentgolf: 4500,
+  intelligentgolf: 2000,  // we now wait for network idle instead of a fixed delay
   clubv1: 3500,
   teeitup: 3000,
   esp: 4000,
@@ -475,10 +495,268 @@ const PROVIDER_WAIT_MS = {
 
 // ─── Main scrape orchestration ────────────────────────────────────────────────
 
+/**
+ * Wait for the page to settle after navigation/date interaction.
+ * For JS-heavy providers (IntelligentGolf, ClubV1) we wait for network idle
+ * so XHR tee-time responses are captured before we read the page.
+ * Fall back to a fixed delay for simpler providers.
+ */
+async function waitForPageSettle(page, provider) {
+  const networkIdleProviders = new Set(["intelligentgolf", "clubv1", "teeitup", "brs"]);
+
+  if (networkIdleProviders.has(provider)) {
+    try {
+      // Wait until no more than 0 in-flight network requests for 1 second
+      await page.waitForLoadState("networkidle", { timeout: 8000 });
+    } catch {
+      // networkidle timed out — fall back to fixed delay
+      await page.waitForTimeout(PROVIDER_WAIT_MS[provider] || 3000);
+    }
+  } else {
+    await page.waitForTimeout(PROVIDER_WAIT_MS[provider] || 3000);
+  }
+}
+
+// ─── IntelligentGolf extractor ───────────────────────────────────────────────
+// Structure confirmed from live DOM inspection:
+//   <div class="teetimes-slot bookable:4">
+//     <a href="?date=30-03-2026&course=8&group=1&book=14:10:00">
+//       <span class="slot-time">14:10</span>
+//       <span class="slot-price">£45.00</span>
+//     </a>
+//   </div>
+//
+// Spots available is encoded in the class: "bookable:N"
+// Unavailable slots have class "bookable:0" or are absent entirely.
+//
+async function extractIntelligentGolf(page) {
+  // Wait specifically for the slot container to appear
+  await page.waitForSelector(".teetimes-slot, .price-buttons", { timeout: 8000 }).catch(() => {});
+
+  return await page.evaluate(() => {
+    const rows = [];
+    const seen = new Set();
+
+    const slots = document.querySelectorAll("div[class*='teetimes-slot']");
+
+    for (const slot of slots) {
+      // Parse spots from class e.g. "teetimes-slot bookable:4"
+      const classStr = slot.className || "";
+      const spotsMatch = classStr.match(/bookable:(\d+)/);
+      const spots = spotsMatch ? Number(spotsMatch[1]) : null;
+
+      // Skip slots with 0 availability
+      if (spots !== null && spots === 0) continue;
+
+      // Time from span.slot-time, or from the href book= param as fallback
+      let timeRaw = null;
+      const timeSpan = slot.querySelector(".slot-time, [class*='slot-time']");
+      if (timeSpan) {
+        timeRaw = (timeSpan.textContent || "").trim();
+      }
+
+      // Fallback: parse time from the href ?book=HH:MM:SS
+      if (!timeRaw) {
+        const link = slot.querySelector("a[href*='book=']");
+        if (link) {
+          const m = (link.getAttribute("href") || "").match(/book=(\d{1,2}:\d{2})/);
+          if (m) timeRaw = m[1];
+        }
+      }
+
+      if (!timeRaw) continue;
+
+      // Price from span.slot-price
+      let price = null;
+      const priceSpan = slot.querySelector(".slot-price, [class*='slot-price']");
+      if (priceSpan) {
+        const priceText = (priceSpan.textContent || "").trim();
+        const priceMatch = priceText.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
+        price = priceMatch ? priceMatch[0].replace(/\s+/g, "") : null;
+      }
+
+      const key = `${timeRaw}|${price || ""}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      rows.push({
+        tee_time_raw: timeRaw,
+        price_raw: price,
+        spots_raw: spots !== null ? String(spots) : null,
+        raw: slot.innerText.replace(/\s+/g, " ").trim(),
+      });
+    }
+
+    return rows;
+  });
+}
+
+// ─── BRS extractor ───────────────────────────────────────────────────────────
+// Structure confirmed from live DOM inspection:
+//   <p class="group-heading ...">Tee Times from £15.00</p>
+//   <div class="columns is-multiline is-mobile">
+//     <div data-index="0" class="column ...">
+//       <div class="select-players">
+//         <div id="teetime-202603301418" class="button is-teetime is-fullwidth">14:18</div>
+//         <div class="select-players-dropdown ..."> ... </div>
+//       </div>
+//     </div>
+//     ...
+//   </div>
+//
+// Price is per group-heading, shared across all slots beneath it.
+// Unavailable slots have no div.is-teetime inside their column.
+// Spots not exposed in the DOM at this stage.
+//
+async function extractBrs(page) {
+  await page.waitForSelector(".is-teetime, .group-heading", { timeout: 8000 }).catch(() => {});
+
+  return await page.evaluate(() => {
+    const rows = [];
+    const seen = new Set();
+
+    // Build a map of group-heading price → applies to all .columns below it
+    // Walk the DOM in order, tracking the current price as we pass headings
+    let currentPrice = null;
+
+    const allNodes = Array.from(document.querySelectorAll(
+      "p.group-heading, div.is-teetime"
+    ));
+
+    for (const node of allNodes) {
+      if (node.tagName === "P" && node.classList.contains("group-heading")) {
+        // Extract price from heading text e.g. "Tee Times from £15.00"
+        const m = (node.textContent || "").match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
+        currentPrice = m ? m[0].replace(/\s+/g, "") : null;
+        continue;
+      }
+
+      if (node.classList.contains("is-teetime")) {
+        // Time from text content e.g. "14:18"
+        let timeRaw = (node.textContent || "").trim();
+
+        // Fallback: parse from id="teetime-202603301418" → last 4 chars = HHMM
+        if (!timeRaw && node.id && node.id.startsWith("teetime-")) {
+          const digits = node.id.replace("teetime-", "");
+          if (digits.length >= 12) {
+            const hh = digits.slice(8, 10);
+            const mm = digits.slice(10, 12);
+            timeRaw = `${hh}:${mm}`;
+          }
+        }
+
+        if (!timeRaw) continue;
+
+        const key = `${timeRaw}|${currentPrice || ""}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        rows.push({
+          tee_time_raw: timeRaw,
+          price_raw: currentPrice,
+          spots_raw: null,
+          raw: timeRaw,
+        });
+      }
+    }
+
+    return rows;
+  });
+}
+
+// ─── ClubV1 extractor ────────────────────────────────────────────────────────
+// Structure confirmed from live DOM inspection:
+//   <div class="tee available" data-teetime="2026-03-30 12:30"
+//        data-hour-val="12" data-min-val="30">
+//     <div class="time theme_bg"> 12:30 </div>
+//     <div class="info">
+//       <div class="col-xs-12 col-sm-9">
+//         <div class="prices">
+//           <div class="price ball-1"><div class="value">30.00</div></div>
+//           <div class="price ball-2"><div class="value">60.00</div></div>
+//           <div class="price ball-3"><div class="value">90.00</div></div>
+//           <div class="price ball-4"><div class="value">120.00</div></div>
+//         </div>
+//       </div>
+//       <div class="col-xs-12 col-sm-3">
+//         <div class="controls"><a ... >Book</a></div>
+//       </div>
+//     </div>
+//   </div>
+//
+// Unavailable slots: div.tee without class "available" — skipped.
+// Price: we take ball-1 (single player green fee) as the canonical price.
+// Spots: derived from how many ball-N divs are present.
+//
+async function extractClubV1(page) {
+  await page.waitForSelector(".tee.available, div.tees", { timeout: 8000 }).catch(() => {});
+
+  return await page.evaluate(() => {
+    const rows = [];
+    const seen = new Set();
+
+    // Only select slots with class "available" — excludes booked/closed slots
+    const slots = document.querySelectorAll("div.tee.available");
+
+    for (const slot of slots) {
+      // Time from data-teetime attribute "2026-03-30 12:30" → take the time part
+      let timeRaw = null;
+      const dataTeeTime = slot.getAttribute("data-teetime") || "";
+      if (dataTeeTime.includes(" ")) {
+        timeRaw = dataTeeTime.split(" ")[1].trim(); // "12:30"
+      }
+
+      // Fallback: time from div.time text content
+      if (!timeRaw) {
+        const timeEl = slot.querySelector(".time, .time.theme_bg");
+        if (timeEl) timeRaw = (timeEl.textContent || "").trim();
+      }
+
+      // Fallback: data-hour-val + data-min-val
+      if (!timeRaw) {
+        const h = slot.getAttribute("data-hour-val");
+        const m = slot.getAttribute("data-min-val");
+        if (h && m) timeRaw = `${h.padStart(2,"0")}:${m.padStart(2,"0")}`;
+      }
+
+      if (!timeRaw) continue;
+
+      // Price: take ball-1 value (single player fee) as the canonical price
+      // Values are plain numbers like "30.00" — prepend £
+      let price = null;
+      const ball1 = slot.querySelector(".price.ball-1 .value, .price.ball-1 div.value");
+      if (ball1) {
+        const val = (ball1.textContent || "").trim();
+        if (val && /^\d+(\.\d{1,2})?$/.test(val)) {
+          price = `£${val}`;
+        }
+      }
+
+      // Spots: count how many ball-N price divs are present
+      const ballDivs = slot.querySelectorAll("[class*='price ball-']");
+      const spots = ballDivs.length > 0 ? ballDivs.length : null;
+
+      const key = `${timeRaw}|${price || ""}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      rows.push({
+        tee_time_raw: timeRaw,
+        price_raw: price,
+        spots_raw: spots !== null ? String(spots) : null,
+        raw: slot.innerText.replace(/\s+/g, " ").trim(),
+      });
+    }
+
+    return rows;
+  });
+}
+
 async function scrapeProvider(page, provider, date) {
   await page.waitForLoadState("domcontentloaded");
-  const waitMs = PROVIDER_WAIT_MS[provider] || 3000;
-  await page.waitForTimeout(waitMs);
+
+  // Initial settle — let the JS framework bootstrap
+  await waitForPageSettle(page, provider);
 
   // Provider-specific date interaction
   if (provider === "brs") {
@@ -489,19 +767,41 @@ async function scrapeProvider(page, provider, date) {
     await setDateIfPresent(page, date);
   }
 
-  // Extra settle time after date interaction
-  await page.waitForTimeout(1500);
+  // After date change, wait for the resulting XHR to complete
+  if (["intelligentgolf", "clubv1", "teeitup", "brs"].includes(provider)) {
+    try {
+      await page.waitForLoadState("networkidle", { timeout: 6000 });
+    } catch {
+      await page.waitForTimeout(2000);
+    }
+  } else {
+    await page.waitForTimeout(1500);
+  }
 
   const responseRows = await extractFromCapturedResponses(page);
-  const domRows = await extractByDom(page);
+
+  // Use targeted provider extractor where available, generic DOM scan for others
+  let domRows;
+  if (provider === "intelligentgolf") {
+    domRows = await extractIntelligentGolf(page);
+  } else if (provider === "brs") {
+    domRows = await extractBrs(page);
+  } else if (provider === "clubv1") {
+    domRows = await extractClubV1(page);
+  } else {
+    domRows = await extractByDom(page);
+  }
 
   return normaliseExtractedRows([...responseRows, ...domRows]);
 }
 
 async function scrapeCourseDate(browser, course, date) {
   const page = await browser.newPage();
-  const provider = detectProvider(course.tee_sheet_url);
-  const targetUrl = buildDateUrl(course.tee_sheet_url, provider, date);
+
+  // Strip UTM/referral params — they corrupt date injection and add no scraping value
+  const cleanUrl = stripTrackingParams(course.tee_sheet_url);
+  const provider = detectProvider(cleanUrl);
+  const targetUrl = buildDateUrl(cleanUrl, provider, date);
 
   page.__capturedResponses = [];
 
@@ -512,10 +812,15 @@ async function scrapeCourseDate(browser, course, date) {
       const contentType = headers["content-type"] || "";
       if (
         contentType.includes("application/json") ||
-        /api|times|teetime|tee-time|booking|availability|slots|schedule/i.test(url)
+        contentType.includes("text/json") ||
+        // Broaden the URL pattern match — IntelligentGolf uses paths like
+        // /api/json.php, /php/visitor_times.php, /booking/times etc.
+        /api|times|teetime|tee.?time|booking|availability|slots|schedule|visitor|json\.php/i.test(url)
       ) {
         const body = await response.text();
-        page.__capturedResponses.push({ url, body });
+        if (body && body.length > 10) {
+          page.__capturedResponses.push({ url, body });
+        }
       }
     } catch {}
   });
@@ -673,7 +978,7 @@ async function processCourse(browser, rawCourse, dates) {
   await upsertRows(allRows);
   await markCourseScraped(course.id);
 
-  const provider = detectProvider(rawCourse.tee_sheet_url);
+  const provider = detectProvider(stripTrackingParams(rawCourse.tee_sheet_url));
   const status = allRows.length > 0 ? "✓" : "✗";
   console.log(`${status} ${course.name} [${provider}]: ${allRows.length} rows`);
 
