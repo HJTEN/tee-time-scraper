@@ -15,64 +15,20 @@ const COURSE_LIMIT = Number(process.env.COURSE_LIMIT || 999); // was 50 — now 
 const COURSE_OFFSET = Number(process.env.COURSE_OFFSET || 0);
 const CACHE_HOURS = Number(process.env.CACHE_HOURS || 24);
 
-// ─── URL classification ───────────────────────────────────────────────────────
+// ─── URL filtering ───────────────────────────────────────────────────────────
+// Only skip URLs that are confirmed hard blocks with zero chance of data:
+// login walls, URL shorteners that are unpredictable, and N/A entries.
+// Everything else gets attempted — a zero-row result is fine, skipping
+// a valid booking page is not.
 
-/**
- * URLs that are info/static pages with no live tee time widget.
- * Scraping these will always yield zero rows — skip them early.
- */
-const STATIC_PAGE_PATTERNS = [
-  /\/visitors\/?$/i,
-  /\/visitors-and-green-fees\/?$/i,
-  /\/visitors-green-fees\/?$/i,
-  /\/green[_-]fees\/?$/i,
-  /\/green_fees\/?$/i,
-  /\/visitors\/green-fees\/?$/i,
-  /\/visitors_and_societies\/?$/i,
-  /\/visitors_societies\/?$/i,
-  /\/visitors-golf\/?$/i,
-  /\/visitors\/visitors-golf\/?$/i,
-  /\/membership\/?$/i,
-  /\/contact-us\/?$/i,
-  /\/societies\/?$/i,
-  /\/play-golf\/visitors\/?$/i,
-  /\/golf\/visitors\/?$/i,
-  /\/golf-enquiry\/?$/i,
-  /\/golf_enquiry_form\/?$/i,
-  /\/book-now\/?$/i,
-  /\/last-chance/i,
-  /elitelive\/login\.php/i,         // e-s-p.com login wall
-  /\/news\.php/i,
-  /warnerhotels\.co\.uk/i,
-  /cutt\.ly\//i,                    // URL shorteners — unpredictable redirects
+const HARD_SKIP_PATTERNS = [
+  /elitelive\/login\.php/i,      // e-s-p.com — requires auth
+  /warnerhotels\.co\.uk/i,       // hotel deals page, no tee sheet
+  /cutt\.ly\//i,                 // URL shortener — unpredictable destination
 ];
 
-/**
- * Affiliate/aggregator URLs that don't host booking widgets themselves.
- * Golfscape pages are discovery pages, not tee sheet embeds.
- */
-const AGGREGATOR_PATTERNS = [
-  /golfscape\.com/i,
-  /golfnow\.co\.uk/i,
-  /back9solutions\.com/i,          // portal requires auth
-  /digitickets\.co\.uk/i,          // event ticketing, not a tee sheet
-  /cloud-reservations\.net/i,      // requires session
-  /premiersoftware\.co\.uk/i,      // requires session/auth
-  /golfgraffix\.com/i,             // clubnet portal — requires auth cookie
-  /golfbook\.255it\.com/i,         // requires login
-  /rsweb\.foxhills\.co\.uk/i,      // member portal
-  /kal\.org\.uk/i,                 // council leisure — no tee data
-  /telfordandwrekinleisure/i,
-  /pyrfordlakes\.golfmanager\.com/i,
-  /e-s-p\.com\/elitelive\/login/i,
-];
-
-function isStaticPage(url) {
-  return STATIC_PAGE_PATTERNS.some((p) => p.test(url));
-}
-
-function isAggregatorPage(url) {
-  return AGGREGATOR_PATTERNS.some((p) => p.test(url));
+function isHardSkip(url) {
+  return HARD_SKIP_PATTERNS.some((p) => p.test(url));
 }
 
 // ─── Provider detection ───────────────────────────────────────────────────────
@@ -904,47 +860,31 @@ async function markCourseScraped(courseId) {
 function loadCoursesFromJson() {
   const raw = JSON.parse(fs.readFileSync("./clubs.json", "utf8"));
 
-  const skippedStatic = [];
-  const skippedAggregator = [];
+  const skipped = [];
   const courses = [];
 
   for (const [index, row] of raw.entries()) {
     const name = (row["Club name"] || "").trim();
     const url = (row["Booking URL"] || "").trim();
 
+    // Skip truly invalid entries only
     if (!name || !url || url === "N/A") continue;
 
-    if (isStaticPage(url)) {
-      skippedStatic.push(name);
-      continue;
-    }
-
-    if (isAggregatorPage(url)) {
-      skippedAggregator.push(name);
+    // Skip confirmed hard blocks — login walls, broken shorteners
+    if (isHardSkip(url)) {
+      skipped.push(name);
       continue;
     }
 
     courses.push({ source_index: index, name, tee_sheet_url: url });
   }
 
-  console.log(`\n── URL classification ──────────────────────────────────`);
-  console.log(`  Total entries:        ${raw.length}`);
-  console.log(`  Scrapeable:           ${courses.length}`);
-  console.log(`  Skipped (static):     ${skippedStatic.length}`);
-  console.log(`  Skipped (aggregator): ${skippedAggregator.length}`);
+  console.log(`\n── Course loading ──────────────────────────────────────`);
+  console.log(`  Total entries:  ${raw.length}`);
+  console.log(`  Attempting:     ${courses.length}`);
+  console.log(`  Hard skipped:   ${skipped.length}`);
+  if (skipped.length) skipped.forEach((n) => console.log(`    ✗ ${n}`));
   console.log(`────────────────────────────────────────────────────────\n`);
-
-  if (skippedStatic.length) {
-    console.log("Static page skips (need real booking URL):");
-    skippedStatic.forEach((n) => console.log(`  ✗ ${n}`));
-    console.log();
-  }
-
-  if (skippedAggregator.length) {
-    console.log("Aggregator/auth-wall skips (need direct tee sheet URL):");
-    skippedAggregator.forEach((n) => console.log(`  ✗ ${n}`));
-    console.log();
-  }
 
   const sliced = courses.slice(COURSE_OFFSET, COURSE_OFFSET + COURSE_LIMIT);
   console.log(`Processing ${sliced.length} courses (offset ${COURSE_OFFSET}, limit ${COURSE_LIMIT})\n`);
