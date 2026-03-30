@@ -847,6 +847,81 @@ async function upsertRows(rows) {
   if (error) console.error("Upsert error:", error);
 }
 
+// ─── Past date cleanup ────────────────────────────────────────────────────────
+
+async function cleanPastDates() {
+  const today = new Date().toISOString().slice(0, 10);
+  const { error, count } = await supabase
+    .from("tee_times")
+    .delete({ count: "exact" })
+    .lt("date", today);
+  if (error) {
+    console.error("Past date cleanup error:", error.message);
+  } else {
+    console.log(`Cleaned ${count ?? "?"} rows with date < ${today}`);
+  }
+}
+
+// ─── Name matching fix ────────────────────────────────────────────────────────
+// The resolved view joins tee_times.course_name → clubs.club_name via
+// normalize_clublyst_club_name(). When course_name in tee_times doesn't
+// exactly match clubs.club_name, the join fails even if the normalised
+// keys are identical (e.g. different punctuation, spacing).
+// This function looks up the canonical club_name from the clubs table
+// and returns it so we write the correct name into tee_times from the start.
+
+const clubNameCache = new Map(); // avoid repeated DB lookups per run
+
+async function resolveCanonicalName(scrapedName) {
+  if (clubNameCache.has(scrapedName)) return clubNameCache.get(scrapedName);
+
+  // First try exact match
+  const { data: exact } = await supabase
+    .from("clubs")
+    .select("club_name")
+    .eq("club_name", scrapedName)
+    .limit(1);
+
+  if (exact && exact.length > 0) {
+    clubNameCache.set(scrapedName, exact[0].club_name);
+    return exact[0].club_name;
+  }
+
+  // Try case-insensitive match
+  const { data: all } = await supabase
+    .from("clubs")
+    .select("club_name");
+
+  if (all) {
+    const lower = scrapedName.toLowerCase().trim();
+    const match = all.find((c) => c.club_name.toLowerCase().trim() === lower);
+    if (match) {
+      clubNameCache.set(scrapedName, match.club_name);
+      return match.club_name;
+    }
+
+    // Try normalised match — strip "golf club/course/centre" suffixes and punctuation
+    function normalise(s) {
+      return s.toLowerCase()
+        .replace(/\bgolf\s+(club|course|centre|center|links|park)\b/gi, "")
+        .replace(/[^a-z0-9\s]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    const normScraped = normalise(scrapedName);
+    const normMatch = all.find((c) => normalise(c.club_name) === normScraped);
+    if (normMatch) {
+      clubNameCache.set(scrapedName, normMatch.club_name);
+      return normMatch.club_name;
+    }
+  }
+
+  // No match found — use the scraped name as-is
+  clubNameCache.set(scrapedName, scrapedName);
+  return scrapedName;
+}
+
 async function markCourseScraped(courseId) {
   const { error } = await supabase
     .from("golf_courses")
@@ -915,6 +990,16 @@ async function processCourse(browser, rawCourse, dates) {
     await sleep(1000);
   }
 
+  // Resolve canonical name from clubs table before upserting
+  // so tee_times.course_name matches clubs.club_name exactly
+  if (allRows.length > 0) {
+    const canonicalName = await resolveCanonicalName(rawCourse.name);
+    if (canonicalName !== rawCourse.name) {
+      console.log(`  Name resolved: "${rawCourse.name}" → "${canonicalName}"`);
+      allRows.forEach((r) => { r.course_name = canonicalName; });
+    }
+  }
+
   await upsertRows(allRows);
   await markCourseScraped(course.id);
 
@@ -939,6 +1024,10 @@ async function runWorker(courses, dates, workerId) {
 }
 
 async function main() {
+  // Clean past-dated rows before scraping so the view always shows fresh data
+  console.log("\n── Cleaning past dates ─────────────────────────────────");
+  await cleanPastDates();
+
   const dates = nextDates(DAYS_AHEAD);
   const courses = loadCoursesFromJson();
   const batches = chunk(courses, BATCH_SIZE);
