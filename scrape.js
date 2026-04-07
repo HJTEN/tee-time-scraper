@@ -10,18 +10,16 @@ const supabase = createClient(
 const BATCH_SIZE            = Number(process.env.BATCH_SIZE            || 5);
 const CONCURRENCY           = Number(process.env.CONCURRENCY           || 2);
 const PER_COURSE_DELAY_MS   = Number(process.env.PER_COURSE_DELAY_MS   || 2500);
-const DAYS_AHEAD            = Number(process.env.DAYS_AHEAD            || 7);
+const DAYS_AHEAD            = Number(process.env.DAYS_AHEAD            || 3);   // ← reduced from 7
 const COURSE_LIMIT          = Number(process.env.COURSE_LIMIT          || 999);
 const COURSE_OFFSET         = Number(process.env.COURSE_OFFSET         || 0);
-const CACHE_HOURS           = Number(process.env.CACHE_HOURS           || 24);
+const CACHE_HOURS           = Number(process.env.CACHE_HOURS           || 23);  // ← reduced from 24 (prevents edge-case skip at 4am boundary)
 
 // ─── URL filtering ────────────────────────────────────────────────────────────
-// Only hard-skip URLs that are confirmed zero-data dead ends.
-// A zero-row result is acceptable; silently skipping a valid page is not.
 
 const HARD_SKIP_PATTERNS = [
-  /warnerhotels\.co\.uk/i,   // hotel deals page, no tee sheet
-  /cutt\.ly\//i,             // URL shortener — unpredictable destination
+  /warnerhotels\.co\.uk/i,
+  /cutt\.ly\//i,
 ];
 
 function isHardSkip(url) {
@@ -29,7 +27,6 @@ function isHardSkip(url) {
 }
 
 // ─── Provider detection ───────────────────────────────────────────────────────
-// Order matters — more specific patterns first.
 
 function detectProvider(url) {
   const u = (url || "").toLowerCase();
@@ -40,8 +37,6 @@ function detectProvider(url) {
   if (u.includes("golfnow"))                          return "golfnow";
   if (u.includes("golfmanager"))                      return "golfmanager";
   if (u.includes("back9solutions"))                   return "back9";
-  // ESP: match both the direct elitelive domain AND club websites
-  // that embed ESP (detected at runtime via DOM — see detectEspViaPage).
   if (u.includes("e-s-p.com"))                        return "esp";
   if (u.includes("esp-leisure"))                      return "esp";
   if (u.includes("elitelive"))                        return "esp";
@@ -52,8 +47,6 @@ function detectProvider(url) {
   return "generic";
 }
 
-// Some clubs embed ESP inside their own website (e.g. The Addington).
-// After page load we can confirm this by checking for ESP-specific DOM signals.
 async function detectEspViaPage(page) {
   return await page.evaluate(() => {
     return !!(
@@ -94,7 +87,7 @@ function buildDateUrl(url, provider, date) {
       if (url.includes("visitor_home") || url.includes("visitor_menu") || url.includes("visitor_month")) {
         return `${url}${joiner}date=${date}`;
       }
-      return url; // hash-based BRS — date set via DOM interaction
+      return url;
 
     case "intelligentgolf":
       if (url.includes("date=")) return url.replace(/date=\d{4}-\d{2}-\d{2}/, `date=${date}`);
@@ -105,8 +98,6 @@ function buildDateUrl(url, provider, date) {
       return `${url}${joiner}date=${date}`;
 
     case "esp":
-      // ESP date is always set via DOM form interaction after page load —
-      // never injected into the URL (session-bound, no stable date param).
       return url;
 
     case "foresite":
@@ -166,7 +157,6 @@ function normaliseTime(raw) {
   if (hour > 23 || minute > 59) return null;
   if (hour < 5 || hour > 21) return null;
 
-  // Standard booking intervals — rejects prices/distances leaking through
   const validMinutes = new Set([
     0, 5, 7, 8, 10, 12, 14, 15, 20, 21, 24, 25, 28,
     30, 35, 36, 40, 42, 45, 48, 49, 50, 56,
@@ -358,25 +348,10 @@ async function setBrsDate(page, date) {
   return false;
 }
 
-/**
- * ESP date interaction.
- *
- * ESP booking pages are sometimes embedded in an iframe on the club's own
- * website (class: activity_viewtimes_iframe_wrapper). We need to:
- *   1. Detect whether the tee sheet is inside an iframe or directly on the page.
- *   2. Fill the date form field in DD/MM/YYYY format.
- *   3. Submit the form and wait for the #availtimesbox to repopulate.
- *
- * The date form field is typically named "play_date" or "date".
- * Submitting triggers a server-side session refresh — we then scrape the
- * updated DOM. The actual booking URLs embedded in the response are
- * session-bound and discarded; only slot times and prices are stored.
- */
 async function setEspDate(page, date) {
   const [y, m, d] = date.split("-");
-  const espDate = `${d}/${m}/${y}`; // ESP expects DD/MM/YYYY
+  const espDate = `${d}/${m}/${y}`;
 
-  // Try direct page first (ESP domain or redirect)
   const directInput = page.locator('input[name="play_date"], input[name="date"], select[name="play_date"]').first();
   if (await directInput.count()) {
     try {
@@ -387,7 +362,6 @@ async function setEspDate(page, date) {
     } catch {}
   }
 
-  // Try iframe context — ESP is often embedded in club websites
   const iframeSelectors = [
     ".activity_viewtimes_iframe_wrapper iframe",
     "iframe[src*='e-s-p']",
@@ -441,17 +415,7 @@ async function waitForPageSettle(page, provider) {
 }
 
 // ─── IntelligentGolf extractor ────────────────────────────────────────────────
-//
-// Confirmed DOM structure:
-//   <div class="teetimes-slot bookable:4">
-//     <a href="?date=30-03-2026&course=8&group=1&book=14:10:00">
-//       <span class="slot-time">14:10</span>
-//       <span class="slot-price">£45.00</span>
-//     </a>
-//   </div>
-//
-// Spots from class "bookable:N". bookable:0 = skip.
-//
+
 async function extractIntelligentGolf(page) {
   await page.waitForSelector(".teetimes-slot, .price-buttons", { timeout: 8000 }).catch(() => {});
 
@@ -497,19 +461,7 @@ async function extractIntelligentGolf(page) {
 }
 
 // ─── BRS extractor ────────────────────────────────────────────────────────────
-//
-// Confirmed DOM structure:
-//   <p class="group-heading">Tee Times from £15.00</p>
-//   <div class="columns is-multiline is-mobile">
-//     <div data-index="0" class="column">
-//       <div class="select-players">
-//         <div id="teetime-202603301418" class="button is-teetime is-fullwidth">14:18</div>
-//       </div>
-//     </div>
-//   </div>
-//
-// Price comes from the group-heading above the slot group.
-//
+
 async function extractBrs(page) {
   await page.waitForSelector(".is-teetime, .group-heading", { timeout: 8000 }).catch(() => {});
 
@@ -546,19 +498,7 @@ async function extractBrs(page) {
 }
 
 // ─── ClubV1 extractor ────────────────────────────────────────────────────────
-//
-// Confirmed DOM structure:
-//   <div class="tee available" data-teetime="2026-03-30 12:30"
-//        data-hour-val="12" data-min-val="30">
-//     <div class="time theme_bg">12:30</div>
-//     <div class="prices">
-//       <div class="price ball-1"><div class="value">30.00</div></div>
-//       <div class="price ball-2"><div class="value">60.00</div></div>
-//     </div>
-//   </div>
-//
-// ball-1 = single player fee (canonical price). Spots = count of ball-N divs.
-//
+
 async function extractClubV1(page) {
   await page.waitForSelector(".tee.available, div.tees", { timeout: 8000 }).catch(() => {});
 
@@ -602,50 +542,14 @@ async function extractClubV1(page) {
 }
 
 // ─── ESP extractor ────────────────────────────────────────────────────────────
-//
-// Confirmed DOM structure (from The Addington live inspection):
-//
-//   <div id="availtimesbox">
-//     <div class="prices_container">
-//       <div class="fullsheet_container">
-//         <div class="fullsheet_container_available">
-//           <a onclick="ESPScreenloader.startspinner();"
-//              href="?gotdata=2&StartDate=06%2F04%2F26&EndDate=06%2F04%2F26
-//                    &Start=12%3A20&End=13%3A19&Valid=N&Price=175.00&">
-//             " 12:20"
-//             <br>
-//             "£175.00 "
-//           </a>
-//         </div>
-//         <div class="fullsheet_container_available"> ... </div>
-//       </div>
-//     </div>
-//   </div>
-//
-// Key observations:
-//   - Available slots: div.fullsheet_container_available
-//   - Unavailable/booked slots: div.fullsheet_container (without _available)
-//   - Time and price are mixed text nodes inside the <a> tag
-//   - The href contains URL-encoded time params as a fallback source:
-//       Start=HH%3AMM (decoded: HH:MM)
-//       Price=NNN.NN
-//   - The href is session-bound — we NEVER store it, only extract data from it
-//   - ESP may be embedded in an iframe on club websites
-//
-// Strategy:
-//   1. Try direct page context first.
-//   2. Fall back to iframe context if #availtimesbox not found directly.
-//   3. Extract from text nodes + href params as fallback.
-//
+
 async function extractEsp(page) {
-  // Wait for the availability container — either directly or inside an iframe
   const directBox = await page.locator("#availtimesbox").count().catch(() => 0);
 
   if (directBox > 0) {
     return await extractEspFromContext(page);
   }
 
-  // Try iframe contexts
   const iframeSelectors = [
     ".activity_viewtimes_iframe_wrapper iframe",
     "iframe[src*='e-s-p']",
@@ -664,13 +568,9 @@ async function extractEsp(page) {
     } catch {}
   }
 
-  // Neither direct nor iframe found — return empty
   return [];
 }
 
-/**
- * Extract ESP slots from the page directly (no iframe).
- */
 async function extractEspFromContext(page) {
   await page.waitForSelector("#availtimesbox", { timeout: 6000 }).catch(() => {});
 
@@ -684,7 +584,6 @@ async function extractEspFromContext(page) {
       const link = slot.querySelector("a[href]");
       if (!link) continue;
 
-      // Primary: extract time from visible text content
       let timeRaw = null;
       let price = null;
 
@@ -695,8 +594,6 @@ async function extractEspFromContext(page) {
       const priceMatch = fullText.match(/[£€$]\s?\d+(?:\.\d{1,2})?/);
       if (priceMatch) price = priceMatch[0].replace(/\s+/g, "");
 
-      // Fallback: decode time and price from href params
-      // href: ?...&Start=12%3A20&...&Price=175.00&
       if (!timeRaw || !price) {
         const href = link.getAttribute("href") || "";
         const decoded = decodeURIComponent(href);
@@ -720,7 +617,7 @@ async function extractEspFromContext(page) {
       rows.push({
         tee_time_raw: timeRaw,
         price_raw: price,
-        spots_raw: null, // ESP doesn't expose spots in the availability DOM
+        spots_raw: null,
         raw: fullText,
       });
     }
@@ -729,16 +626,11 @@ async function extractEspFromContext(page) {
   });
 }
 
-/**
- * Extract ESP slots from within an iframe context.
- * Playwright's frameLocator API lets us query inside the iframe.
- */
 async function extractEspFromFrame(page, iframeSel) {
   const frame = page.frameLocator(iframeSel);
 
   await frame.locator("#availtimesbox").waitFor({ timeout: 6000 }).catch(() => {});
 
-  // Use locator-based extraction (frameLocator doesn't support page.evaluate)
   const slotLocators = frame.locator(".fullsheet_container_available a[href]");
   const count = await slotLocators.count().catch(() => 0);
 
@@ -789,7 +681,6 @@ async function scrapeProvider(page, provider, date) {
   await page.waitForLoadState("domcontentloaded");
   await waitForPageSettle(page, provider);
 
-  // Provider-specific date interaction
   let espContext = null;
   if (provider === "brs") {
     await setBrsDate(page, date);
@@ -799,7 +690,6 @@ async function scrapeProvider(page, provider, date) {
     await setDateIfPresent(page, date);
   }
 
-  // Wait for data to load after date interaction
   if (["intelligentgolf", "clubv1", "teeitup", "brs"].includes(provider)) {
     try {
       await page.waitForLoadState("networkidle", { timeout: 6000 });
@@ -807,7 +697,6 @@ async function scrapeProvider(page, provider, date) {
       await page.waitForTimeout(2000);
     }
   } else if (provider === "esp") {
-    // ESP does a server-side form post — wait for the DOM to repopulate
     await page.waitForTimeout(3000);
     await page.waitForSelector("#availtimesbox, .fullsheet_container_available", { timeout: 5000 }).catch(() => {});
   } else {
@@ -816,7 +705,6 @@ async function scrapeProvider(page, provider, date) {
 
   const responseRows = await extractFromCapturedResponses(page);
 
-  // Dispatch to the correct extractor
   let domRows = [];
   if (provider === "intelligentgolf") {
     domRows = await extractIntelligentGolf(page);
@@ -830,7 +718,6 @@ async function scrapeProvider(page, provider, date) {
     domRows = await extractByDom(page);
   }
 
-  // If ESP wasn't detected via URL but DOM confirms it, re-extract with ESP extractor
   if (provider === "generic" && domRows.length === 0) {
     const isEsp = await detectEspViaPage(page);
     if (isEsp) {
@@ -869,13 +756,11 @@ async function scrapeCourseDate(browser, course, date) {
   try {
     await page.goto(targetUrl, { waitUntil: "domcontentloaded", timeout: 60000 });
 
-    // If a club website URL resolves to an ESP page, upgrade the provider
     if (provider === "generic") {
       const isEsp = await detectEspViaPage(page);
       if (isEsp) {
         provider = "esp";
         console.log(`  ↳ ${course.name}: ESP detected via DOM (club website embeds ESP)`);
-        // Trigger date interaction now that we know it's ESP
         await setEspDate(page, date);
         await page.waitForTimeout(3000);
         await page.waitForSelector("#availtimesbox, .fullsheet_container_available", { timeout: 5000 }).catch(() => {});
@@ -923,17 +808,20 @@ async function ensureGolfCourse(course) {
   return inserted;
 }
 
-async function shouldScrapeDate(courseId, date) {
+// ─── Course-level cache check ─────────────────────────────────────────────────
+//
+// Replaces the old per-date shouldScrapeDate check. One DB round-trip per
+// course instead of one per (course × date), and bails before opening a
+// browser page for recently-scraped courses.
+//
+async function shouldScrapeCourse(courseId) {
   const { data, error } = await supabase
-    .from("tee_times")
-    .select("scraped_at")
-    .eq("course_id", courseId)
-    .eq("date", date)
-    .order("scraped_at", { ascending: false })
-    .limit(1);
-  if (error) { console.error(`Cache check failed for ${courseId} ${date}:`, error.message); return true; }
-  if (!data || data.length === 0) return true;
-  const hoursOld = (new Date() - new Date(data[0].scraped_at)) / (1000 * 60 * 60);
+    .from("golf_courses")
+    .select("last_scraped")
+    .eq("id", courseId)
+    .single();
+  if (error || !data?.last_scraped) return true;
+  const hoursOld = (new Date() - new Date(data.last_scraped)) / (1000 * 60 * 60);
   return hoursOld > CACHE_HOURS;
 }
 
@@ -1046,14 +934,18 @@ async function processCourse(browser, rawCourse, dates) {
     return;
   }
 
+  // ── Course-level cache check ──────────────────────────────────────────────
+  // One DB call replaces DAYS_AHEAD calls, and skips the browser entirely
+  // for courses that were scraped within CACHE_HOURS.
+  const needsScrape = await shouldScrapeCourse(course.id);
+  if (!needsScrape) {
+    console.log(`  Skipping ${course.name} (fresh cache)`);
+    return;
+  }
+
   const allRows = [];
 
   for (const date of dates) {
-    const shouldScrape = await shouldScrapeDate(course.id, date);
-    if (!shouldScrape) {
-      console.log(`  Skipping ${course.name} ${date} (fresh cache)`);
-      continue;
-    }
     const rows = await scrapeCourseDate(browser, course, date);
     if (rows.length) allRows.push(...rows);
     await sleep(1000);
@@ -1097,6 +989,15 @@ async function main() {
   const dates = nextDates(DAYS_AHEAD);
   const courses = loadCoursesFromJson();
   const batches = chunk(courses, BATCH_SIZE);
+
+  console.log(`── Run config ───────────────────────────────────────────`);
+  console.log(`  DAYS_AHEAD:    ${DAYS_AHEAD}`);
+  console.log(`  CACHE_HOURS:   ${CACHE_HOURS}`);
+  console.log(`  BATCH_SIZE:    ${BATCH_SIZE}`);
+  console.log(`  CONCURRENCY:   ${CONCURRENCY}`);
+  console.log(`  COURSE_OFFSET: ${COURSE_OFFSET}`);
+  console.log(`  COURSE_LIMIT:  ${COURSE_LIMIT}`);
+  console.log(`────────────────────────────────────────────────────────\n`);
 
   for (let i = 0; i < batches.length; i += CONCURRENCY) {
     const slice = batches.slice(i, i + CONCURRENCY);
