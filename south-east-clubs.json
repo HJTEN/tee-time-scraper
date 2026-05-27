@@ -1,0 +1,6650 @@
+{
+  "region": "South East",
+  "club_count": 118,
+  "clubs": [
+    {
+      "name": "Aylesbury Vale Golf Club",
+      "postcode": "LU7 0UJ",
+      "town": "Wing",
+      "county": "Bedfordshire",
+      "green_fee": "35-100",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1248,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 150
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 930,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 150
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "46006",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 245,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 150
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "16-18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 295,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 150
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/aylesburyvale#/course/1"
+    },
+    {
+      "name": "Calcot Park Golf Club",
+      "postcode": "RG31 7RN",
+      "town": "Tilehurst",
+      "county": "Berkshire",
+      "green_fee": "35-100",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 187
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1603,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.calcotpark.com/visitorbooking"
+    },
+    {
+      "name": "Donnington Grove Country Club",
+      "postcode": "RG14 2LA",
+      "town": "Shaw cum Donnington",
+      "county": "Berkshire",
+      "green_fee": "32-40",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1199,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Seniors",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1099,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 950,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Country",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Armed Forces",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 925,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 250
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/donningtongrovegolf#/course/1"
+    },
+    {
+      "name": "East Berkshire Golf Club",
+      "postcode": "RG45 6BD",
+      "town": "Wokingham Without",
+      "county": "Berkshire",
+      "green_fee": "75-110",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 2397,
+          "annual_fee_gbp": 2397,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 460
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-35",
+          "joining_fee_gbp": 240,
+          "annual_fee_gbp": 1830,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 460
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-30",
+          "joining_fee_gbp": 120,
+          "annual_fee_gbp": 1371,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 460
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-25",
+          "joining_fee_gbp": 60,
+          "annual_fee_gbp": 867,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 460
+        }
+      ],
+      "booking_url": "https://www.eastberkshiregolfclub.com/visitors"
+    },
+    {
+      "name": "Goring & Streatley Golf Club",
+      "postcode": "RG8 9QA",
+      "town": "Streatley",
+      "county": "Berkshire",
+      "green_fee": "47-80",
+      "membership_fees": [
+        {
+          "membership_type": "7 day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1985,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 196
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "30-40",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1751,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 196
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "27-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1520,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 196
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "23-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1032,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 196
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "19-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 541,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 196
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "Flexible",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 921,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 196
+        }
+      ],
+      "booking_url": "https://goring.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Hennerton Golf Club",
+      "postcode": "RG10 8LT",
+      "town": "Wargrave",
+      "county": "Berkshire",
+      "green_fee": "20-30",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1350,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 162
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1199,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 162
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Twilight",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 860,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 162
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 407,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 162
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 756,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 162
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Flexible",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 594,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 162
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/hennerton#/course/1"
+    },
+    {
+      "name": "Newbury & Crookham Golf Club",
+      "postcode": "RG19 8BZ",
+      "town": "Greenham",
+      "county": "Berkshire",
+      "green_fee": "40-60",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1715,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "39 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1624,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "38 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1558,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "37 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1492,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "36 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1424,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1358,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1325,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1292,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1259,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1226,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1192,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1159,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1126,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1093,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1060,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1010,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 932,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 853,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 773,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21 years old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 694,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-20 year old",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 615,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "Junior Gold",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 202,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "Junior Bronze",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 138,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.golfnow.co.uk/tee-times/facility/11692-newbury-crookham-golf-club/search#facilitytype=0&sortby=Date&view=Grouping&holes=3&timemax=42&timemin=10&players=0&pricemax=10000&pricemin=0&promotedcampaignsonly=false"
+    },
+    {
+      "name": "Royal Ascot Golf Club",
+      "postcode": "SL5 7LJ",
+      "town": "Sunninghill and Ascot",
+      "county": "Berkshire",
+      "green_fee": "40-75",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 2279,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1955,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 2090,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1980,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1870,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1760,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1540,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1430,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1320,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1210,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 990,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 880,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 770,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 660,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 550,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "20",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 500,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        }
+      ],
+      "booking_url": "https://royalascot.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Beaconsfield Golf Club",
+      "postcode": "HP9 2UR",
+      "town": "Seer Green",
+      "county": "Buckinghamshire",
+      "green_fee": "125-187",
+      "membership_fees": [
+        {
+          "membership_type": "Weekday",
+          "age_notes": "under18",
+          "joining_fee_gbp": 125,
+          "annual_fee_gbp": 187,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.beaconsfieldgolfclub.co.uk/green_fees"
+    },
+    {
+      "name": "Buckingham Golf Club",
+      "postcode": "MK18 4AE",
+      "town": "Radclive-cum-Chackmore",
+      "county": "Buckinghamshire",
+      "green_fee": "25-55",
+      "membership_fees": [
+        {
+          "membership_type": "7 day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1580,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 235
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "30-39",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 235
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "26-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 820,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 235
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "18-25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 565,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 235
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/buckingham#/course/1"
+    },
+    {
+      "name": "Chiltern Forest Golf Club",
+      "postcode": "HP22 5NQ",
+      "town": "Aston Clinton",
+      "county": "Buckinghamshire",
+      "green_fee": "45-50",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1516,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Servicemen",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1351,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-19",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 436,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "20-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 565,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 760,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1329,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Country",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 799,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 115
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/chilternforest#/course/1"
+    },
+    {
+      "name": "Denham Golf Club",
+      "postcode": "UB9 5DE",
+      "town": "Denham",
+      "county": "Buckinghamshire",
+      "green_fee": "95-135",
+      "membership_fees": null,
+      "booking_url": "https://www.denhamgolfclub.co.uk/visitors/visitors-greens-fees/"
+    },
+    {
+      "name": "Gerrards Cross Golf Club",
+      "postcode": "SL9 0QA",
+      "town": "Chalfont St. Peter",
+      "county": "Buckinghamshire",
+      "green_fee": "75-125",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 3000,
+          "annual_fee_gbp": 2270,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1805,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Associate",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2646,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Country",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": 1800,
+          "annual_fee_gbp": 510,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-29",
+          "joining_fee_gbp": 900,
+          "annual_fee_gbp": 900,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-34",
+          "joining_fee_gbp": 450,
+          "annual_fee_gbp": 1550,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35-39",
+          "joining_fee_gbp": 225,
+          "annual_fee_gbp": 1790,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 280
+        }
+      ],
+      "booking_url": "https://www.gxgolf.co.uk/golf_enquiry_form"
+    },
+    {
+      "name": "Harleyford Golf Club",
+      "postcode": "SL7 2SP",
+      "town": "Great Marlow",
+      "county": "Buckinghamshire",
+      "green_fee": "63-75",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1200,
+          "annual_fee_gbp": 2450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2130,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 690,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 960,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1330,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28-31",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1710,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2080,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 320
+        }
+      ],
+      "booking_url": "https://harleyford.intelligentgolf.co.uk/visitorbooking"
+    },
+    {
+      "name": "Hazlemere Golf Club",
+      "postcode": "HP15 7LR",
+      "town": "Hazlemere",
+      "county": "Buckinghamshire",
+      "green_fee": "30-56",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1390,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1240,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 528,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 744,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1056,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/hazlemere#/course/1"
+    },
+    {
+      "name": "South Buckinghamshire Golf Course",
+      "postcode": "SL2 4PJ",
+      "town": "Stoke Poges",
+      "county": "Buckinghamshire",
+      "green_fee": "19-40",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 40,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.southbucksgolfclub.co.uk/book-tee-times"
+    },
+    {
+      "name": "Beauport Park",
+      "postcode": "TN37 7BP",
+      "town": "Hastings",
+      "county": "East Sussex",
+      "green_fee": "18-25",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 675,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Senior",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 620,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 325,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 345,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 370,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 395,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 420,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 445,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 470,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 500,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 525,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 550,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 570,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 590,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 625,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 645,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 90
+        }
+      ],
+      "booking_url": "https://beauportpark.hub.clubv1.com/Visitors/Booking"
+    },
+    {
+      "name": "Brighton & Hove Golf Club",
+      "postcode": "BN1 8YJ",
+      "town": "Brighton and Hove",
+      "county": "East Sussex",
+      "green_fee": "27-48",
+      "membership_fees": [
+        {
+          "membership_type": "7-Day Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1175,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1090,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Twilight Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 750,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Low Income (Accessible Golf)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 520,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U14",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 65,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "15-17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 115,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "18-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 350,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "22-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 520,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "25-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 770,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://brighton.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Cooden Beach Golf Club",
+      "postcode": "TN39 4TR",
+      "town": "Bexhill-on-Sea",
+      "county": "East Sussex",
+      "green_fee": "30-80",
+      "membership_fees": [
+        {
+          "membership_type": "7-Day 7 Day Playing",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1500,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "2-Day Restricted Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1310,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Second Club Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 600,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "19-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 440,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 620,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 795,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1060,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-33",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1235,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34-36",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1410,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "37-39",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1585,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 880,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 265,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Off-Peak",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 970,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "14 & Under",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "15-18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 175,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Academy Starter",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 355,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Academy Plus",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 615,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        },
+        {
+          "membership_type": "Social (Partner of a 7 Day paying member)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 50,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 88
+        }
+      ],
+      "booking_url": "https://coodenbeach.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Dyke Golf Club",
+      "postcode": "BN1 8YJ",
+      "town": "Brighton and Hove",
+      "county": "East Sussex",
+      "green_fee": "30-80",
+      "membership_fees": [
+        {
+          "membership_type": "7-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1684,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1504,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 844,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 944,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1044,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1144,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1244,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1111,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Time Education",
+          "age_notes": "18/22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 409,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 700,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social Members",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Twilight)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 700,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "14 & under",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 75,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "15-17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://dykegolfclub.hub.clubv1.com/visitors/booking"
+    },
+    {
+      "name": "East Sussex National Golf Club",
+      "postcode": "TN22 5ES",
+      "town": "Little Horsted",
+      "county": "East Sussex",
+      "green_fee": "50-90",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day Individual",
+          "age_notes": "36+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2095,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Seasonal",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1780,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1496,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day Seasonal",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1286,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19 -35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1433,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 719,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "45886",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 263,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas Individual",
+          "age_notes": "35+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1048,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas 7 Day",
+          "age_notes": "18\u2013 35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 717,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas Junior",
+          "age_notes": "8 \u2013 17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 131,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://book.eastsussexnational.co.uk/golf"
+    },
+    {
+      "name": "Holtye",
+      "postcode": "TN8 7ED",
+      "town": "Hartfield",
+      "county": "East Sussex",
+      "green_fee": "22-36",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 989,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "9 Hole",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "Senior",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 710,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "Occasional",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 605,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 690,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 780,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 620,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 470,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 180
+        }
+      ],
+      "booking_url": "https://holtye.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Holtye Golf Club",
+      "postcode": "TN8 7ED",
+      "town": "Hartfield",
+      "county": "East Sussex",
+      "green_fee": "38-45",
+      "membership_fees": null,
+      "booking_url": "https://holtye.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Piltdown Golf Club",
+      "postcode": "TN22 3XB",
+      "town": "Fletching",
+      "county": "East Sussex",
+      "green_fee": "60-115",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "40+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2060,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31\u201339",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27\u201330",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23\u201326",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 825,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18\u201322",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country Near",
+          "age_notes": "23\u201330",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 515,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country Near",
+          "age_notes": "31+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1025,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country Distant & Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Playing Social (Invite Only)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1030,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Non-Playing",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 235,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social (Inc. VAT)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 190,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "12\u201317",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 200,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U12",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 125,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.piltdowngolfclub.co.uk/visitorbooking"
+    },
+    {
+      "name": "Seaford Golf Club",
+      "postcode": "BN25 2JD",
+      "town": "Seaford",
+      "county": "East Sussex",
+      "green_fee": "15-75",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "All ages",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1545,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Five Day",
+          "age_notes": "All ages",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1470,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "80+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1395,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1267,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 975,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21-25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 684,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 484,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-19",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 344,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Student",
+          "age_notes": "18-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 344,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "15-18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 170,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "46005",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 90,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Inner Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 927,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Outer Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 618,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 75,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Academy Junior",
+          "age_notes": "46009",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 45,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Ladies 3 Month Trial (7 Day) Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "New Player Pathway",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Clubhouse Social Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 48,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social Pitch & Putt Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 204,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.seafordgolfclub.co.uk/visitors/green-fees/"
+    },
+    {
+      "name": "Sweetwoods Park",
+      "postcode": "TN8 7JN",
+      "town": "Hartfield",
+      "county": "East Sussex",
+      "green_fee": "32-57",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 175
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 175
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 580,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 175
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 825,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 175
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1080,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 175
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "36-40",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1320,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 175
+        }
+      ],
+      "booking_url": "https://sweetwoods.co.uk/book-a-tee-time"
+    },
+    {
+      "name": "Alresford Golf Club",
+      "postcode": "SO24 0PN",
+      "town": "Tichborne",
+      "county": "Hampshire",
+      "green_fee": "42-55",
+      "membership_fees": [
+        {
+          "membership_type": "7- Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 950,
+          "annual_fee_gbp": 1585,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 630,
+          "annual_fee_gbp": 1305,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": 410,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Days",
+          "age_notes": "18-23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Days",
+          "age_notes": "24-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 845,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Days",
+          "age_notes": "27-28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 980,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Days",
+          "age_notes": "29-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1230,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Days",
+          "age_notes": "31-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1415,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Students",
+          "age_notes": "18-23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 325,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "U15",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 170,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 65
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "15-17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 255,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 65
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "U12",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 65
+        },
+        {
+          "membership_type": "Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 750,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Academy Plus",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 900,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social Extra",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 180,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 85,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.alresfordgolf.co.uk/"
+    },
+    {
+      "name": "Boundary Lakes Golf Course",
+      "postcode": "SO32 2HF",
+      "town": "Curdridge",
+      "county": "Hampshire",
+      "green_fee": "40-45",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/boundary-lakes-golf-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Brokenhurst Manor Golf Club",
+      "postcode": "SO42 7SG",
+      "town": "Brockenhurst",
+      "county": "Hampshire",
+      "green_fee": "60-135",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-40",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "JUNIOR",
+          "age_notes": "U18",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day-TIME EDUCATION",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "COUNTRY",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "ASSOCIATE",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.brokenhurst-manor.org.uk/visitors"
+    },
+    {
+      "name": "Burley Golf Club",
+      "postcode": "BH24 4BB",
+      "town": "Burley",
+      "county": "Hampshire",
+      "green_fee": "32-44",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/bournemouth-golf-courses/burley-golf-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Cams Hall Estate Golf Club (Creek Course)",
+      "postcode": "PO16 8UP",
+      "town": "Fareham",
+      "county": "Hampshire",
+      "green_fee": "44-75",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/cams-hall-estate-golf-club-creek-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Cams Hall Estate Golf Club (Park Course)",
+      "postcode": "PO16 8UP",
+      "town": "Fareham",
+      "county": "Hampshire",
+      "green_fee": "23-30",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/cams-hall-estate-golf-club-park-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "East Horton Golf Club (The Greenwood Course)",
+      "postcode": "SO50 7EY",
+      "town": "Fair Oak and Horton Heath",
+      "county": "Hampshire",
+      "green_fee": "25-55",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/east-horton-golf-club-the-greenwood-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "East Horton Golf Club (The Parkland Course)",
+      "postcode": "SO50 7EY",
+      "town": "Fair Oak and Horton Heath",
+      "county": "Hampshire",
+      "green_fee": "22-50",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/east-horton-golf-club-the-parkland-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Gosport & Stokes Bay Golf Club",
+      "postcode": "PO12 2AT",
+      "town": "Gosport",
+      "county": "Hampshire",
+      "green_fee": "21-24",
+      "membership_fees": null,
+      "booking_url": "https://gsb.hub.clubv1.com/visitors/booking"
+    },
+    {
+      "name": "Hartley Wintney Golf Club",
+      "postcode": "RG27 8PT",
+      "town": "Hartley Wintney",
+      "county": "Hampshire",
+      "green_fee": "65-70",
+      "membership_fees": null,
+      "booking_url": "https://www.hartleywintneygolfclub.com/golf-enquiry/"
+    },
+    {
+      "name": "Hayling Golf Club",
+      "postcode": "PO11 0BX",
+      "town": "Havant",
+      "county": "Hampshire",
+      "green_fee": "50-165",
+      "membership_fees": [
+        {
+          "membership_type": "7-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 2995,
+          "annual_fee_gbp": 1595,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7-Day",
+          "age_notes": "26-28",
+          "joining_fee_gbp": 2245,
+          "annual_fee_gbp": 1196,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7-Day",
+          "age_notes": "22-25",
+          "joining_fee_gbp": 1495,
+          "annual_fee_gbp": 797,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7-Day",
+          "age_notes": "18-21",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 478,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1495,
+          "annual_fee_gbp": 1355,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Distant",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 995,
+          "annual_fee_gbp": 797,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 180,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 120,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 50,
+          "annual_fee_gbp": 140,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "NP Spouse",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 49,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.haylinggolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Meon Valley Golf & Country Club",
+      "postcode": "SO32 2HQ",
+      "town": "Shedfield",
+      "county": "Hampshire",
+      "green_fee": "20-50",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": 1260,
+          "monthly_fee_gbp": 136.5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Weekday",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": 1050,
+          "monthly_fee_gbp": 115.5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Vallay",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 105,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Vallay No Leisure",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 682.5,
+          "monthly_fee_gbp": 68.25,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "25-30",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 1050,
+          "monthly_fee_gbp": 100,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 630,
+          "monthly_fee_gbp": 70,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U17",
+          "joining_fee_gbp": 30,
+          "annual_fee_gbp": 189,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Corporate",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 115.5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Weekday Corporate",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 94.5,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.meonvalleygolfclub.co.uk"
+    },
+    {
+      "name": "North Hants Golf Club",
+      "postcode": "GU51 1RF",
+      "town": "Elvetham Heath",
+      "county": "Hampshire",
+      "green_fee": "120-200",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 775,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Beginner",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.northhantsgolf.co.uk/visitors_and_societies"
+    },
+    {
+      "name": "Old Thorns",
+      "postcode": "GU30 7PE",
+      "town": "Bramshott and Liphook",
+      "county": "Hampshire",
+      "green_fee": "41-120",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/old-thorns?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Romsey Golf Club",
+      "postcode": "SO16 0XW",
+      "town": "Nursling and Rownhams",
+      "county": "Hampshire",
+      "green_fee": "20-32",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 1298,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 1095,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Veterans",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 150,
+          "annual_fee_gbp": 649,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 150,
+          "annual_fee_gbp": 650,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Couple \u2013 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 600,
+          "annual_fee_gbp": 2401.3,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Couple \u2013 5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 600,
+          "annual_fee_gbp": 2025.75,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Couple \u2013 1 x 7 & 1 x 5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 600,
+          "annual_fee_gbp": 2198,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Low User",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 75,
+          "annual_fee_gbp": 425,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "46006",
+          "joining_fee_gbp": 25,
+          "annual_fee_gbp": 140,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "16-18",
+          "joining_fee_gbp": 25,
+          "annual_fee_gbp": 160,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19",
+          "joining_fee_gbp": 75,
+          "annual_fee_gbp": 300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "20-21",
+          "joining_fee_gbp": 75,
+          "annual_fee_gbp": 425,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-25",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 750,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-30",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 950,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 80,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.romseygolfclub.com/visitors_societies/visitor_information/"
+    },
+    {
+      "name": "Royal Winchester Golf Club",
+      "postcode": "SO22 5QE",
+      "town": "Winchester",
+      "county": "Hampshire",
+      "green_fee": "44-95",
+      "membership_fees": [
+        {
+          "membership_type": "7-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1900,
+          "annual_fee_gbp": 1839,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5-Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 1526,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "45856",
+          "joining_fee_gbp": 50,
+          "annual_fee_gbp": 180,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": 550,
+          "annual_fee_gbp": 498,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "23-25",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 970,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "26-29",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 1500,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 90,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 550,
+          "annual_fee_gbp": 848,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 424,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.royalwinchestergolfclub.com/visitorbooking/"
+    },
+    {
+      "name": "Sherfield Oaks Golf Club (Waterloo Course)",
+      "postcode": "RG27 0EY",
+      "town": null,
+      "county": "Hampshire",
+      "green_fee": "25-50",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/sherfield-oaks-golf-club-waterloo-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Sherfield Oaks Golf Club (Wellington Course)",
+      "postcode": "RG27 0EY",
+      "town": null,
+      "county": "Hampshire",
+      "green_fee": "25-50",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/sherfield-oaks-golf-club-wellington-course?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "South Winchester Golf Club",
+      "postcode": "SO22 5QX",
+      "town": "Hursley",
+      "county": "Hampshire",
+      "green_fee": "45-85",
+      "membership_fees": [
+        {
+          "membership_type": "5 Day Single",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1468.5,
+          "monthly_fee_gbp": 133.5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Single",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1919.5,
+          "monthly_fee_gbp": 174.5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day 7 Day",
+          "age_notes": "19-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 957,
+          "monthly_fee_gbp": 87,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day 7 Day",
+          "age_notes": "25-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1501.5,
+          "monthly_fee_gbp": 136.5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day 7 Day",
+          "age_notes": "30-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1749,
+          "monthly_fee_gbp": 159,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Junior Single",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 242,
+          "monthly_fee_gbp": 22,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://golf.southwinchestergolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Stoneham Golf Club",
+      "postcode": "SO16 3TT",
+      "town": "Southampton",
+      "county": "Hampshire",
+      "green_fee": "75-120",
+      "membership_fees": [
+        {
+          "membership_type": "Seven Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2075,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Six Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1792,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Five Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1572,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country (7 Day)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1038,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country (5 Day)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 830,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1453,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1101,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1245,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 943,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1107,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 837,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1038,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 786,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 969,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 733,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 899,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 682,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 830,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 628,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 691,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 525,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "19",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 554,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "19",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 419,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 day",
+          "age_notes": "18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 415,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 day",
+          "age_notes": "18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 315,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior Categories 4",
+          "age_notes": "36+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 70,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior Categories 3",
+          "age_notes": "28-36",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 140,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior Categories 2",
+          "age_notes": "46019",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 210,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior Categories 1",
+          "age_notes": "12 & Under",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 280,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Non-Playing",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 120,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.stonehamgolfclub.org.uk/visitors"
+    },
+    {
+      "name": "The Hampshire Golf Club",
+      "postcode": "SP11 7TB",
+      "town": "Goodworth Clatford",
+      "county": "Hampshire",
+      "green_fee": "30-35",
+      "membership_fees": [
+        {
+          "membership_type": "Gold \u2013 7 Day Course Access",
+          "age_notes": "16-25",
+          "joining_fee_gbp": 495,
+          "annual_fee_gbp": 795,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Gold \u2013 7 Day Course Access",
+          "age_notes": "26-49",
+          "joining_fee_gbp": 495,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Gold \u2013 7 Day Course Access",
+          "age_notes": "50 & up",
+          "joining_fee_gbp": 495,
+          "annual_fee_gbp": 1195,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Silver",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Midweek Flexi",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 145,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Bronze Flexi",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 245,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Twilight Flexi",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 99,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/hampshire#/course/1"
+    },
+    {
+      "name": "Waterlooville Golf Club",
+      "postcode": "PO8 8AP",
+      "town": "Havant",
+      "county": "Hampshire",
+      "green_fee": "35-80",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1200,
+          "annual_fee_gbp": 1614,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-29",
+          "joining_fee_gbp": 850,
+          "annual_fee_gbp": 1372,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24-26",
+          "joining_fee_gbp": 650,
+          "annual_fee_gbp": 1049,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21-23",
+          "joining_fee_gbp": 450,
+          "annual_fee_gbp": 726,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 404,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "0-17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 81,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 136,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://waterlooville.hub.clubv1.com/Visitors/Booking"
+    },
+    {
+      "name": "Wickham Park Golf Club",
+      "postcode": "PO17 5AP",
+      "town": "Shedfield",
+      "county": "Hampshire",
+      "green_fee": "28-57",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/southampton-golf-courses/wickham-park-golf-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Bearsted Golf Club",
+      "postcode": "ME14 4PQ",
+      "town": "Bearsted",
+      "county": "Kent",
+      "green_fee": "50-88",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/kent-golf-courses/bearsted-golf-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Broome Hall Golf Club",
+      "postcode": "CT4 6QX",
+      "town": "Barham",
+      "county": "Kent",
+      "green_fee": "30",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "70+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 895,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 795,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "70+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 695,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": null
+    },
+    {
+      "name": "Canterbury Golf Club",
+      "postcode": "CT1 1TW",
+      "town": "Canterbury",
+      "county": "Kent",
+      "green_fee": "10-75",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1675,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "18 - 20 years",
+          "age_notes": "18-20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Octogenarian 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1256,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1435,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Octogenarian 5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1076,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "U12",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 60,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "46006",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 130,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "16-18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 180,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social Club",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 80,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 638,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 638,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://canterbury.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Chestfield Golf Club",
+      "postcode": "CT5 3LU",
+      "town": "Chestfield",
+      "county": "Kent",
+      "green_fee": "43-85",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 1585,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "35-39",
+          "joining_fee_gbp": 270,
+          "annual_fee_gbp": 1430,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "30-34",
+          "joining_fee_gbp": 225,
+          "annual_fee_gbp": 1170,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "26-29",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 850,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "22-25",
+          "joining_fee_gbp": 125,
+          "annual_fee_gbp": 600,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "18-21",
+          "joining_fee_gbp": 80,
+          "annual_fee_gbp": 385,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Student",
+          "age_notes": "18-23",
+          "joining_fee_gbp": 60,
+          "annual_fee_gbp": 265,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "15-17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 130,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U14",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 95,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Privilege",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 793,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "International",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 145,
+          "annual_fee_gbp": 775,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 145,
+          "annual_fee_gbp": 775,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Twilight",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 795,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 30,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social Privilege",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 20,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Academy Taster",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 399,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Academy Advanced",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 699,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://chestfield.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Hever Castle Golf Club (Princes Course)",
+      "postcode": "TN8 7NP",
+      "town": "Hever",
+      "county": "Kent",
+      "green_fee": "22",
+      "membership_fees": null,
+      "booking_url": "https://hever.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Kingsnorth Golf Club (formerly Homelands Golf Centre)",
+      "postcode": "TN26 1NJ",
+      "town": "Kingsnorth",
+      "county": "Kent",
+      "green_fee": null,
+      "membership_fees": null,
+      "booking_url": "https://kingsnorthgolf.co.uk/"
+    },
+    {
+      "name": "Littlestone Golf Club",
+      "postcode": "TN28 8RB",
+      "town": "New Romney",
+      "county": "Kent",
+      "green_fee": "15-80",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 2020,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "30-59",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1540,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "60-90",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1160,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 360,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 790,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Access",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 900,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "46008",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 120,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.littlestonegolfclub.org.uk/visitors_and_societies"
+    },
+    {
+      "name": "Lullingstone Park",
+      "postcode": "BR6 7PX",
+      "town": "Crockenhill",
+      "county": "Kent",
+      "green_fee": "22-32",
+      "membership_fees": null,
+      "booking_url": "https://lullingstonegolfcourse.co.uk/#contact"
+    },
+    {
+      "name": "Mid Kent",
+      "postcode": "DA11 7RB",
+      "town": "Gravesham",
+      "county": "Kent",
+      "green_fee": "35-50",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1030,
+          "annual_fee_gbp": 1580,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 75
+        },
+        {
+          "membership_type": "Mid Week",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1030,
+          "annual_fee_gbp": 1285,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 75
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-20",
+          "joining_fee_gbp": 1030,
+          "annual_fee_gbp": 585,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 75
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21-23",
+          "joining_fee_gbp": 1030,
+          "annual_fee_gbp": 775,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 75
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24-25",
+          "joining_fee_gbp": 1030,
+          "annual_fee_gbp": 1020,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 75
+        }
+      ],
+      "booking_url": "https://www.mkgc.co.uk/"
+    },
+    {
+      "name": "North Foreland",
+      "postcode": "CT10 3PU",
+      "town": "Broadstairs and St. Peters",
+      "county": "Kent",
+      "green_fee": "40-120",
+      "membership_fees": null,
+      "booking_url": "https://northforeland.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Princes Golf Club",
+      "postcode": "CT13 9QB",
+      "town": "Worth",
+      "county": "Kent",
+      "green_fee": "100-215",
+      "membership_fees": null,
+      "booking_url": "https://www.e-s-p.com/elitelive/book_start.php?clubid=1607"
+    },
+    {
+      "name": "Redlibbets Golf Club",
+      "postcode": "TN15 7HT",
+      "town": "Ash-cum-Ridley",
+      "county": "Kent",
+      "green_fee": "25-60",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1920,
+          "monthly_fee_gbp": 160,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1380,
+          "monthly_fee_gbp": 115,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1440,
+          "monthly_fee_gbp": 120,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1140,
+          "monthly_fee_gbp": 95,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 780,
+          "monthly_fee_gbp": 65,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 570,
+          "monthly_fee_gbp": 47.5,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.redlibbets.co.uk/golf/visitor-golf/"
+    },
+    {
+      "name": "Royal Cinque Ports Golf Club",
+      "postcode": "CT14 6RF",
+      "town": "Sholden",
+      "county": "Kent",
+      "green_fee": "150-295",
+      "membership_fees": null,
+      "booking_url": "https://members.royalcinqueports.com/visitorbooking/"
+    },
+    {
+      "name": "Royal St George's Golf Club",
+      "postcode": "CT13 9PB",
+      "town": "Worth",
+      "county": "Kent",
+      "green_fee": "215-430",
+      "membership_fees": [
+        {
+          "membership_type": "Full",
+          "age_notes": "N/A",
+          "joining_fee_gbp": 215,
+          "annual_fee_gbp": 400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.royalstgeorges.com/visit/green-fees/"
+    },
+    {
+      "name": "Sittingbourne & Milton Regis Golf Club",
+      "postcode": "ME9 7PX",
+      "town": "Newington",
+      "county": "Kent",
+      "green_fee": "50-100",
+      "membership_fees": [
+        {
+          "membership_type": "Junior 7 Day",
+          "age_notes": "45850",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 125,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior 7 Day",
+          "age_notes": "13-15",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior 7 Day",
+          "age_notes": "16-18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 225,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Clubhouse/Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 55,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Womens 5 Day",
+          "age_notes": "30/33-79",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1230,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Womens 7 Day",
+          "age_notes": "30/33-79",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1515,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.sittingbournegolfclub.com/visitorbooking/"
+    },
+    {
+      "name": "Tudor Park Country Club",
+      "postcode": "ME14 4NQ",
+      "town": "Thurnham",
+      "county": "Kent",
+      "green_fee": "50-53",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/kent-golf-courses/tudor-park-country-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Weald of Kent Golf Club",
+      "postcode": "TN27 9PT",
+      "town": "East Sutton",
+      "county": "Kent",
+      "green_fee": "20-38",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 850,
+          "monthly_fee_gbp": 75,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Family 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2000,
+          "monthly_fee_gbp": 17,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Family 5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1460,
+          "monthly_fee_gbp": 125,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "U35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 935,
+          "monthly_fee_gbp": 8,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "U30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 725,
+          "monthly_fee_gbp": 65,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "U25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 550,
+          "monthly_fee_gbp": 5,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U12",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 200,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/wealdofkent#/course/1"
+    },
+    {
+      "name": "Westerham",
+      "postcode": "TN16 1QN",
+      "town": "Westerham",
+      "county": "Kent",
+      "green_fee": "40-85",
+      "membership_fees": null,
+      "booking_url": "https://www.westerhamgc.co.uk/Golf/green-fees.aspx"
+    },
+    {
+      "name": "Bicester Golf & Country Club",
+      "postcode": "OX26 1TH",
+      "town": "Chesterton",
+      "county": "Oxfordshire",
+      "green_fee": "25-35",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 30,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Golf",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 885,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://bicester.hub.clubv1.com/visitors/booking"
+    },
+    {
+      "name": "Caversham Golf Club",
+      "postcode": "RG4 7UT",
+      "town": "Mapledurham",
+      "county": "Oxfordshire",
+      "green_fee": "60-105",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 2350,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1200,
+          "annual_fee_gbp": 1930,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18 - 32",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "45978",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 385,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://clubnet.golfgraffix.com/Booking/visitors/visitors_booking.html?clubid=QIHJAC-67564-73456"
+    },
+    {
+      "name": "Chipping Norton Golf Club",
+      "postcode": "OX7 5QH",
+      "town": "Chipping Norton",
+      "county": "Oxfordshire",
+      "green_fee": "15-45",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1531,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1461,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Veteran",
+          "age_notes": "75+",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1441,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day Veteran",
+          "age_notes": "75+",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1291,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 901,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "13-15",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 213,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "16-18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 281,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 481,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21-25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 911,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/chippingnorton#/course/1"
+    },
+    {
+      "name": "Heythrop Park Golf Club",
+      "postcode": "OX7 4NF",
+      "town": "Enstone",
+      "county": "Oxfordshire",
+      "green_fee": "35-40",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1295,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1095,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.warnerhotels.co.uk/deals/last-chance-2025"
+    },
+    {
+      "name": "Hinksey Heights Golf Club",
+      "postcode": "OX1 5AB",
+      "town": "South Hinksey",
+      "county": "Oxfordshire",
+      "green_fee": "28-40",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "40+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1125,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "39",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1090,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "38",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1055,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "37",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1015,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "36",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 980,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 945,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 910,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 870,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 835,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 800,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 765,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 725,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 690,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 655,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 620,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 580,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 545,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 510,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 475,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 435,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 200,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "13-17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 130,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "U13",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 65,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexi 5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 885,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://hinkseyheights.hub.clubv1.com/Visitors/Booking"
+    },
+    {
+      "name": "Kirtlington Golf Club",
+      "postcode": "OX5 3JY",
+      "town": "Kirtlington",
+      "county": "Oxfordshire",
+      "green_fee": "25-30",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1420,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day 7 Day Senior",
+          "age_notes": "66+",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1240,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1035,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day Senior",
+          "age_notes": "66+",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 955,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day Afternoon",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 915,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Colt",
+          "age_notes": "26-29",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 1035,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Colt",
+          "age_notes": "22-25",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 725,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Colt",
+          "age_notes": "18-21",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 435,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 245,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Family (1 7 Day + 1 Junior)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Family (1 7 Day + 2 Junior)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Family (2 7 Day + 1 Junior)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Family (2 7 Day + 2 Junior)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible Package 1: 60 Points",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 275,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible Package 2: 180 Points",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 755,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Afternoon Package 3: 60 Points",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 100,
+          "annual_fee_gbp": 275,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day 1 Year",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 665,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior 1 Year",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 135,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://members.kirtlingtongolfclub.com/visitorbooking/"
+    },
+    {
+      "name": "North Oxford Golf Club",
+      "postcode": "OX2 8EZ",
+      "town": "Gosford and Water Eaton",
+      "county": "Oxfordshire",
+      "green_fee": "35-40",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1399,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1315,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Lifestyle",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 605,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 205,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U10",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 135,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 265,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 324,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 378,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 448,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 518,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 572,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 632,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 697,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 756,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 810,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 864,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 929,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1080,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1165,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1265,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1355,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://northoxford.hub.clubv1.com/visitors/booking"
+    },
+    {
+      "name": "Oxford Golf Club",
+      "postcode": "OX33 1QQ",
+      "town": "Holton",
+      "county": "Oxfordshire",
+      "green_fee": "62-87",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/oxford-golf-courses/oxford-golf-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Rye Hill Golf Club",
+      "postcode": "OX15 6LB",
+      "town": "Epwell",
+      "county": "Oxfordshire",
+      "green_fee": "20-28",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/oxford-golf-courses/rye-hill-golf-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Studley Wood Golf Club",
+      "postcode": "OX33 1BF",
+      "town": "Horton-cum-Studley",
+      "county": "Oxfordshire",
+      "green_fee": "40",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1900,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1420,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 726,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1140,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1296,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1452,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1596,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1752,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.studleywoodgolfclub.co.uk/visitors/"
+    },
+    {
+      "name": "Tadmarton Heath Golf Club",
+      "postcode": "OX15 5HL",
+      "town": "Tadmarton",
+      "county": "Oxfordshire",
+      "green_fee": "55-85",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1555,
+          "annual_fee_gbp": 1555,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-20",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 440,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "21-23",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 590,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24-26",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 735,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-29",
+          "joining_fee_gbp": 440,
+          "annual_fee_gbp": 880,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-35",
+          "joining_fee_gbp": 585,
+          "annual_fee_gbp": 1175,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Student",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 240,
+          "annual_fee_gbp": 370,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 35,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior 9",
+          "age_notes": "U9",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 80,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior 18",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 115,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior Advanced",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 275,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 420,
+          "annual_fee_gbp": 780,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Womens Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 440,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Womens Academy Plus",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 600,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social / Bridge Club",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 60,
+          "annual_fee_gbp": 50,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Guardian",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 50,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.tadmartongolf.com/visitorbooking/"
+    },
+    {
+      "name": "The Club at Mapledurham",
+      "postcode": "RG4 7UD",
+      "town": "Mapledurham",
+      "county": "Oxfordshire",
+      "green_fee": "25-50",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/oxford-golf-courses/the-club-at-mapledurham?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "The Cotswolds Club, Chipping Norton",
+      "postcode": "OX7 5QH",
+      "town": "Chipping Norton",
+      "county": "Oxfordshire",
+      "green_fee": "25-65",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/oxford-golf-courses/the-cotswolds-club-chipping-norton?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "The Oxfordshire Golf Club",
+      "postcode": "OX9 2PU",
+      "town": "Tetsworth",
+      "county": "Oxfordshire",
+      "green_fee": "40-95",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 950,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1780,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35-74",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "75+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexi",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2160,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Corporate Flexi 70",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 4095,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Corporate Flexi 100",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 5145,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Corporate Unlimited",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 8400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://members.theoxfordshiregolfclub.com/visitorbooking/"
+    },
+    {
+      "name": "The Springs Golf Club",
+      "postcode": "OX10 7AB",
+      "town": "Drayton St. Leonard",
+      "county": "Oxfordshire",
+      "green_fee": "30-40",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/oxford-golf-courses/the-springs-golf-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Betchworth Park",
+      "postcode": "RH4 1NZ",
+      "town": "Brockham",
+      "county": "Surrey",
+      "green_fee": "35-90",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 2350,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 355
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 2050,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 355
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Associate",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1175,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 355
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Academy",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 895,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 355
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Pre-Academy",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 515,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 355
+        }
+      ],
+      "booking_url": "https://www.betchworthparkgc.co.uk/visitors-guests/"
+    },
+    {
+      "name": "Bletchingley",
+      "postcode": "RH1 4LP",
+      "town": "Bletchingley",
+      "county": "Surrey",
+      "green_fee": "35-50",
+      "membership_fees": null,
+      "booking_url": "https://bletchingley-golf-club-2.book.teeitup.com/?course=12491&date=2025-10-04&max=9999"
+    },
+    {
+      "name": "Burhill",
+      "postcode": "KT12 4BX",
+      "town": "Elmbridge",
+      "county": "Surrey",
+      "green_fee": "125-135",
+      "membership_fees": null,
+      "booking_url": "https://www.e-s-p.com/elitelive/book_group.php?_gl=1%2Acj4ao%2A_gcl_au%2AMTU4NjIyMjQ2OC4xNzc0OTU2MDk2%2A_ga%2ANjY3Mzc0NTk3LjE3NzQ5NTYwOTY.%2A_ga_1EGET4ELX9%2AczE3NzQ5NTYwOTYkbzEkZzAkdDE3NzQ5NTYwOTYkajYwJGwwJGgw&"
+    },
+    {
+      "name": "Cranleigh Golf & Country Club",
+      "postcode": "GU6 8BB",
+      "town": "Cranleigh",
+      "county": "Surrey",
+      "green_fee": "20-37",
+      "membership_fees": null,
+      "booking_url": "https://golfscape.com/london-golf-courses/cranleigh-golf-country-club?a_aid=69a03d8b8fd73"
+    },
+    {
+      "name": "Dorking Golf Club",
+      "postcode": "RH5 4BX",
+      "town": "Mole Valley",
+      "county": "Surrey",
+      "green_fee": null,
+      "membership_fees": null,
+      "booking_url": "https://www.dorkinggolfclub.co.uk/"
+    },
+    {
+      "name": "Epsom",
+      "postcode": "KT17 4JR",
+      "town": "Epsom and Ewell",
+      "county": "Surrey",
+      "green_fee": "30-65",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1550,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 215
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 625,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 215
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 965,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 215
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29-32",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 215
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 785,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 215
+        }
+      ],
+      "booking_url": "https://epsom.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Foxhills",
+      "postcode": "KT16 0EL",
+      "town": "Runnymede",
+      "county": "Surrey",
+      "green_fee": "25-140",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 5155,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Partner",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 3965,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "36-40",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 4195,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-35",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 3385,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-30",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 2705,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-25",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 2125,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-21",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 1495,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 4095,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Partner",
+          "joining_fee_gbp": 2500,
+          "annual_fee_gbp": 3195,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Golf Only",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 700,
+          "annual_fee_gbp": 1270,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://rsweb.foxhills.co.uk/#/golfBooking/location/200/BH1/"
+    },
+    {
+      "name": "Hampton Court Palace",
+      "postcode": "KT14 4AD",
+      "town": null,
+      "county": "Surrey",
+      "green_fee": "40-70",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 195,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 155,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 140,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 100,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 68,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 50,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "200",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 450,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "100",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://hamptoncourtpalace.golfmanager.com/consumer/ebookings?i=1&resourcetype=100062"
+    },
+    {
+      "name": "Hersham",
+      "postcode": "KT12 4RA",
+      "town": "Elmbridge",
+      "county": "Surrey",
+      "green_fee": "12-25",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1180,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 270
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Under 25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 880,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 270
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 880,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 270
+        }
+      ],
+      "booking_url": "https://hershamgolfclub.com/online-booking/"
+    },
+    {
+      "name": "Kingswood",
+      "postcode": "KT20 6NE",
+      "town": "Reigate and Banstead",
+      "county": "Surrey",
+      "green_fee": "30-67",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1200,
+          "annual_fee_gbp": 2395,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1200,
+          "annual_fee_gbp": 2145,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1200,
+          "annual_fee_gbp": 920,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        },
+        {
+          "membership_type": "Colt",
+          "age_notes": "28-30",
+          "joining_fee_gbp": 448,
+          "annual_fee_gbp": 1790,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        },
+        {
+          "membership_type": "Colt",
+          "age_notes": "25-27",
+          "joining_fee_gbp": 351,
+          "annual_fee_gbp": 1405,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        },
+        {
+          "membership_type": "Colt",
+          "age_notes": "18-24",
+          "joining_fee_gbp": 224,
+          "annual_fee_gbp": 895,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        },
+        {
+          "membership_type": "Lifestyle",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 260,
+          "annual_fee_gbp": 520,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 255
+        }
+      ],
+      "booking_url": "https://www.kingswood-golf.co.uk/visitorbooking"
+    },
+    {
+      "name": "Leatherhead Club",
+      "postcode": "KT22 0EE",
+      "town": "Mole Valley",
+      "county": "Surrey",
+      "green_fee": "40-75",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 2199,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 349
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1799,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 349
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "17-21",
+          "joining_fee_gbp": 500,
+          "annual_fee_gbp": 599,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 349
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-25",
+          "joining_fee_gbp": 500,
+          "annual_fee_gbp": 949,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 349
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-29",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1199,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 349
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-35",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1599,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 349
+        }
+      ],
+      "booking_url": "https://www.theleatherheadclub.com/visitorbooking/"
+    },
+    {
+      "name": "New Zealand (NZGC)",
+      "postcode": "KT15 3QD",
+      "town": "Woking",
+      "county": "Surrey",
+      "green_fee": null,
+      "membership_fees": null,
+      "booking_url": "https://www.nzgc.org/"
+    },
+    {
+      "name": "Pyrford Lakes",
+      "postcode": "GU22 8XR",
+      "town": "Woking",
+      "county": "Surrey",
+      "green_fee": "33-45",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 190,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 150,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 160,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 105,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 70,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": 50,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible 100",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 460,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible 200",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://pyrfordlakes.golfmanager.com/consumer/ebookings?i=1&resourcetype=100070"
+    },
+    {
+      "name": "Reigate Heath Golf Club",
+      "postcode": "RH2 8QR",
+      "town": "Reigate and Banstead",
+      "county": "Surrey",
+      "green_fee": null,
+      "membership_fees": [
+        {
+          "membership_type": "Visitor",
+          "age_notes": "Must book in advance. Check in at pro shop before play. Dogs permitted on the heath but not the course. Mornings: 2-ball or foursomes only.",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 20
+        }
+      ],
+      "booking_url": "https://www.reigateheathgc.com/visitors/book-a-tee-time/"
+    },
+    {
+      "name": "Sandown Park",
+      "postcode": "KT10 8AN",
+      "town": "Elmbridge",
+      "county": "Surrey",
+      "green_fee": "11-35",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 475,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 125
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/sandownpark9#/course/1"
+    },
+    {
+      "name": "Silvermere",
+      "postcode": null,
+      "town": null,
+      "county": "Surrey",
+      "green_fee": "23-45",
+      "membership_fees": [
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "3 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 800,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Pay & Play",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 259,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/silvermere#/course/1"
+    },
+    {
+      "name": "St George's Hill Golf Club",
+      "postcode": "KT13 0NL",
+      "town": "Elmbridge",
+      "county": "Surrey",
+      "green_fee": "200-300",
+      "membership_fees": [
+        {
+          "membership_type": "N/A",
+          "age_notes": "N/A",
+          "joining_fee_gbp": 200,
+          "annual_fee_gbp": 300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.stgeorgeshillgolfclub.co.uk/visit/green-fees/"
+    },
+    {
+      "name": "Sunbury Golf Club",
+      "postcode": "TW17 8QA",
+      "town": "Spelthorne",
+      "county": "Surrey",
+      "green_fee": "12-27",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1419,
+          "monthly_fee_gbp": 129,
+          "junior_fee_gbp": 198
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1188,
+          "monthly_fee_gbp": 108,
+          "junior_fee_gbp": 198
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 781,
+          "monthly_fee_gbp": 71,
+          "junior_fee_gbp": 198
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 935,
+          "monthly_fee_gbp": 85,
+          "junior_fee_gbp": 198
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1100,
+          "monthly_fee_gbp": 100,
+          "junior_fee_gbp": 198
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "9 Hole",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 566,
+          "monthly_fee_gbp": 52,
+          "junior_fee_gbp": 198
+        }
+      ],
+      "booking_url": "https://golf.sunburygolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Surbiton",
+      "postcode": "KT9 1UG",
+      "town": "Elmbridge",
+      "county": "Surrey",
+      "green_fee": "35-55",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 2250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 195
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/surbiton#/course/1"
+    },
+    {
+      "name": "Surrey National",
+      "postcode": "CR3 5AA",
+      "town": "Chaldon",
+      "county": "Surrey",
+      "green_fee": "30-59",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1500,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://surreynational.co.uk/golf/#"
+    },
+    {
+      "name": "Tandridge",
+      "postcode": "RH8 9NQ",
+      "town": "Oxted",
+      "county": "Surrey",
+      "green_fee": "120-160",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 5690,
+          "annual_fee_gbp": 2845,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-23",
+          "joining_fee_gbp": 1423,
+          "annual_fee_gbp": 711,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24-30",
+          "joining_fee_gbp": 2276,
+          "annual_fee_gbp": 1138,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-40",
+          "joining_fee_gbp": 4268,
+          "annual_fee_gbp": 2134,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Full",
+          "age_notes": "N/A",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 200,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://tandridge.hub.clubv1.com/visitors/TeeSheet?date=2026-02-16"
+    },
+    {
+      "name": "Tyrrells Wood",
+      "postcode": "KT22 8QP",
+      "town": "Mole Valley",
+      "county": "Surrey",
+      "green_fee": "75-85",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 2382,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 195
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1250,
+          "annual_fee_gbp": 1915,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "31-35",
+          "joining_fee_gbp": 850,
+          "annual_fee_gbp": 2144,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29-30",
+          "joining_fee_gbp": 750,
+          "annual_fee_gbp": 1906,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-28",
+          "joining_fee_gbp": 650,
+          "annual_fee_gbp": 1548,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25-26",
+          "joining_fee_gbp": 550,
+          "annual_fee_gbp": 1191,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "8 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": 450,
+          "annual_fee_gbp": 834,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        }
+      ],
+      "booking_url": "https://www.tyrrellswoodgolfclub.com/visitors_redirect"
+    },
+    {
+      "name": "West Hill Golf Club",
+      "postcode": "GU24 0BH",
+      "town": "Woking",
+      "county": "Surrey",
+      "green_fee": "125-235",
+      "membership_fees": null,
+      "booking_url": "https://www.westhillgc.co.uk/green_fees"
+    },
+    {
+      "name": "Woking Golf Club",
+      "postcode": "GU22 0JZ",
+      "town": "Woking",
+      "county": "Surrey",
+      "green_fee": "125-300",
+      "membership_fees": null,
+      "booking_url": "https://wokinggolfclub.co.uk/visitors/"
+    },
+    {
+      "name": "Woldingham",
+      "postcode": "CR3 7HA",
+      "town": "Woldingham",
+      "county": "Surrey",
+      "green_fee": "30-65",
+      "membership_fees": null,
+      "booking_url": "https://woldinghamgc.co.uk/golf/visitors/"
+    },
+    {
+      "name": "Woodcote Park",
+      "postcode": "SM7 2QJ",
+      "town": "Reigate and Banstead",
+      "county": "Surrey",
+      "green_fee": "80-90",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1750,
+          "annual_fee_gbp": 2395,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1000,
+          "annual_fee_gbp": 1985,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "33-34",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 2065,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "27-32",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1720,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22-26",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1345,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-21",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 995,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 760,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://visitors.brsgolf.com/woodcotepark#/course/1"
+    },
+    {
+      "name": "Bognor Regis Golf Club",
+      "postcode": "PO22 8JD",
+      "town": "Felpham",
+      "county": "West Sussex",
+      "green_fee": "37-70",
+      "membership_fees": null,
+      "booking_url": "https://bognorregis.hub.clubv1.com/Visitors/Booking"
+    },
+    {
+      "name": "Burgess Hill Golf Centre (Par 3 Course)",
+      "postcode": "RH15 8RE",
+      "town": "Burgess Hill",
+      "county": "West Sussex",
+      "green_fee": "16",
+      "membership_fees": null,
+      "booking_url": "https://burgesshillgolfcentre.co.uk/course/"
+    },
+    {
+      "name": "Chichester Golf Club",
+      "postcode": "PO20 1AX",
+      "town": "Hunston",
+      "county": "West Sussex",
+      "green_fee": "55",
+      "membership_fees": [
+        {
+          "membership_type": "7-Day Plus",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1675,
+          "monthly_fee_gbp": 152,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "5-Day (Mon\u2013Fri)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1375,
+          "monthly_fee_gbp": 125,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "Off-Peak (Afternoon)",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1075,
+          "monthly_fee_gbp": 98,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "Flexi Plus",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 280,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "7 Day Plus",
+          "age_notes": "25-29",
+          "joining_fee_gbp": 250,
+          "annual_fee_gbp": 1275,
+          "monthly_fee_gbp": 115,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "Young 7 Day",
+          "age_notes": "18-24",
+          "joining_fee_gbp": 150,
+          "annual_fee_gbp": 620,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 200,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 200
+        }
+      ],
+      "booking_url": "https://www.e-s-p.com/elitelive/book_start.php?clubid=1607"
+    },
+    {
+      "name": "Chichester Golf Club (Par 3 Course)",
+      "postcode": "PO20 1AX",
+      "town": "Hunston",
+      "county": "West Sussex",
+      "green_fee": null,
+      "membership_fees": null,
+      "booking_url": "https://chichestergolf.com/green-fees/"
+    },
+    {
+      "name": "Cowdray Park Golf Club",
+      "postcode": "GU29 0BB",
+      "town": "Easebourne",
+      "county": "West Sussex",
+      "green_fee": "40-50",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 1065,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Weekday Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 500,
+          "annual_fee_gbp": 1725,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "75+",
+          "joining_fee_gbp": 400,
+          "annual_fee_gbp": 1470,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30\u201339",
+          "joining_fee_gbp": 400,
+          "annual_fee_gbp": 1470,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26\u201329",
+          "joining_fee_gbp": 300,
+          "annual_fee_gbp": 1065,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "22\u201325",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 810,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18\u201321",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 465,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "11+",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "U11",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Lifestyle Membership (300 credits)",
+          "age_notes": "All ages",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 750,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://cowdray.intelligentgolf.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Haywards Heath Golf Club",
+      "postcode": "RH16 1SL",
+      "town": "Lindfield Rural",
+      "county": "West Sussex",
+      "green_fee": "15-60",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1749,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "36-39",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1549,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35 & Under",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1249,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30 & Under",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 875,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "25 & Under",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 549,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 975,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 975,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1549,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 875,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 595,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Student",
+          "age_notes": "18-23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 325,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "45948",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 199,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 135,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 199
+        }
+      ],
+      "booking_url": "https://www.haywardsheathgolfclub.co.uk/visitorbooking/"
+    },
+    {
+      "name": "Ifield Golf Club",
+      "postcode": "RH11 0LN",
+      "town": "Rusper",
+      "county": "West Sussex",
+      "green_fee": "35-38",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day Plus",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1495,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day \u2013 8 Months",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1250,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "36-40",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1100,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "30-35",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 950,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "24-29",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 790,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "19-23",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 365,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible Membership",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 680,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "14 - 18",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 130,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas & Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 800,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Social",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 55,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.ifieldgolf.com/visitorbooking/"
+    },
+    {
+      "name": "Liphook Golf Club",
+      "postcode": "GU30 7EH",
+      "town": "Milland",
+      "county": "West Sussex",
+      "green_fee": "55-70",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 5750,
+          "annual_fee_gbp": 2300,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18 - 22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 600,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23 - 25",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 960,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26 - 28",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1315,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29 - 30",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1615,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 5750,
+          "annual_fee_gbp": 770,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 5750,
+          "annual_fee_gbp": 1150,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Introductory",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 1720,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "45881",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 205,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Juniors",
+          "age_notes": "13 - 17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 400,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://www.liphookgolfclub.com/visitors"
+    },
+    {
+      "name": "Mannings Heath",
+      "postcode": "RH13 6PG",
+      "town": "Nuthurst",
+      "county": "West Sussex",
+      "green_fee": "17-70",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 350,
+          "annual_fee_gbp": 1945,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "5 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 350,
+          "annual_fee_gbp": 1670,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "35-37",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 1855,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "32-34",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 1640,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "29-31",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 1290,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "26-28",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 990,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "23-25",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 660,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 465,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Flexible",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 750,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Country",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 800,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "7 Day 7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 350,
+          "annual_fee_gbp": 1945,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "35-37",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 1855,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "32-34",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 1640,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "29 - 31",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 1290,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "26 - 28",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 990,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "23-25",
+          "joining_fee_gbp": 175,
+          "annual_fee_gbp": 660,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Associate",
+          "age_notes": "18-22",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 465,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Kingfisher",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 540,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 175,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Waterfall Junior",
+          "age_notes": "45947",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 140,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        },
+        {
+          "membership_type": "Kingfisher Junior",
+          "age_notes": "17",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 80,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": null
+        }
+      ],
+      "booking_url": "https://members.manningsheath.com/visitorbooking/"
+    },
+    {
+      "name": "Worthing Golf Club",
+      "postcode": "BN14 9QZ",
+      "town": "Worthing",
+      "county": "West Sussex",
+      "green_fee": "60-90",
+      "membership_fees": [
+        {
+          "membership_type": "7 Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1500,
+          "annual_fee_gbp": 1805,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 25
+        },
+        {
+          "membership_type": "Five Day",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1250,
+          "annual_fee_gbp": 1445,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 25
+        },
+        {
+          "membership_type": "Country/Overseas",
+          "age_notes": "Adult",
+          "joining_fee_gbp": 1250,
+          "annual_fee_gbp": 605,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 25
+        },
+        {
+          "membership_type": "7 Day",
+          "age_notes": "18-20",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": null,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 25
+        },
+        {
+          "membership_type": "Junior",
+          "age_notes": "13-17",
+          "joining_fee_gbp": 25,
+          "annual_fee_gbp": 105,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 25
+        },
+        {
+          "membership_type": "Academy",
+          "age_notes": "Adult",
+          "joining_fee_gbp": null,
+          "annual_fee_gbp": 475,
+          "monthly_fee_gbp": null,
+          "junior_fee_gbp": 25
+        }
+      ],
+      "booking_url": "https://worthing.intelligentgolf.co.uk/visitorbooking/"
+    }
+  ]
