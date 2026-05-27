@@ -13,7 +13,7 @@ jobs:
           node-version: 22
       - run: ls -la
       - run: npm install && npm install ws
-      - run: node backfill_regions.js
+      - run: node backfill-regions.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_KEY }}
