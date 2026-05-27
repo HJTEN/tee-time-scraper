@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 20
       - run: npm install
-      - run: node import_courses.js
+      - run: node import_courses.js london-clubs.json south-east-clubs.json
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_KEY }}
