@@ -59,9 +59,11 @@ async function scrapeBrsGolf(course, date) {
       const res = await fetch(url, {
         headers: { Accept: "application/json", Referer: course.tee_sheet_url },
       });
+      console.log(`  BRS ${url}: ${res.status}`);
       if (!res.ok) continue;
       const data = await res.json();
       const slots = Array.isArray(data) ? data : (data.slots ?? data.data ?? []);
+      console.log(`  BRS ${course.name} slots: ${slots.length} (keys: ${slots[0] ? Object.keys(slots[0]).join(",") : "none"})`);
       if (!slots.length) continue;
       return slots.map((s) => ({
         course_id: course.id,
@@ -72,8 +74,8 @@ async function scrapeBrsGolf(course, date) {
         source_provider: "brs",
         tee_sheet_url: course.tee_sheet_url,
       })).filter((r) => r.tee_time);
-    } catch {
-      // try next endpoint
+    } catch (e) {
+      console.log(`  BRS ${course.name} error: ${e.message}`);
     }
   }
   return [];
@@ -99,9 +101,11 @@ async function scrapeIntelligentGolf(course, date) {
       const res = await fetch(url, {
         headers: { Accept: "application/json", Referer: course.tee_sheet_url },
       });
+      console.log(`  IG ${url}: ${res.status}`);
       if (!res.ok) continue;
       const data = await res.json();
       const slots = Array.isArray(data) ? data : (data.slots ?? data.teeSlots ?? data.data ?? []);
+      console.log(`  IG ${course.name} slots: ${slots.length} (keys: ${slots[0] ? Object.keys(slots[0]).join(",") : "none"})`);
       if (!slots.length) continue;
       return slots.map((s) => ({
         course_id: course.id,
@@ -112,8 +116,8 @@ async function scrapeIntelligentGolf(course, date) {
         source_provider: "intelligentgolf",
         tee_sheet_url: course.tee_sheet_url,
       })).filter((r) => r.tee_time);
-    } catch {
-      // try next endpoint
+    } catch (e) {
+      console.log(`  IG ${course.name} error: ${e.message}`);
     }
   }
   return [];
@@ -132,16 +136,18 @@ async function scrapeClubV1(course, date) {
   const endpoints = [
     `https://${club}.hub.clubv1.com/api/TeeSheet?date=${date}`,
     `https://${club}.hub.clubv1.com/Visitors/TeeSheetData?date=${date}`,
-  ];
+  ]
 
   for (const url of endpoints) {
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/json", Referer: course.tee_sheet_url },
       });
+      console.log(`  CV1 ${url}: ${res.status}`);
       if (!res.ok) continue;
       const data = await res.json();
       const slots = Array.isArray(data) ? data : (data.slots ?? data.teeSlots ?? data.data ?? []);
+      console.log(`  CV1 ${course.name} slots: ${slots.length} (keys: ${slots[0] ? Object.keys(slots[0]).join(",") : "none"})`);
       if (!slots.length) continue;
       return slots.map((s) => ({
         course_id: course.id,
@@ -152,8 +158,8 @@ async function scrapeClubV1(course, date) {
         source_provider: "clubv1",
         tee_sheet_url: course.tee_sheet_url,
       })).filter((r) => r.tee_time);
-    } catch {
-      // try next endpoint
+    } catch (e) {
+      console.log(`  CV1 ${course.name} error: ${e.message}`);
     }
   }
   return [];
@@ -171,6 +177,7 @@ async function scrapeGeneric(browser, course, date) {
     try {
       const body = await response.json();
       const slots = Array.isArray(body) ? body : (body.slots ?? body.data ?? body.teeSlots ?? []);
+      console.log(`  Generic ${course.name} intercepted ${url}: ${slots.length} slots`);
       for (const s of slots) {
         const teeTime = s.time ?? s.tee_time ?? s.startTime ?? s.slot_time ?? s.TeeTime;
         if (teeTime) {
@@ -193,8 +200,8 @@ async function scrapeGeneric(browser, course, date) {
   try {
     const pageUrl = course.tee_sheet_url.replace(/date=[\d-]+/, `date=${date}`);
     await page.goto(pageUrl, { waitUntil: "networkidle", timeout: 30000 });
-  } catch {
-    // navigation timeout or error — return whatever was intercepted
+  } catch (e) {
+    console.log(`  Generic ${course.name} nav error: ${e.message}`);
   } finally {
     await page.close();
   }
