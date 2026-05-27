@@ -3,64 +3,24 @@ name: Scrape Tee Times
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 110
-    strategy:
-      fail-fast: false
-      max-parallel: 5
-      matrix:
-        include:
-          # Offsets are into the *filtered* scrapeable list, not the raw JSON.
-          # Each shard handles 50 courses. Adjust shard count if your
-          # scrapeable total grows beyond 500 (add more offset blocks below).
-          - { offset: 0,   limit: 50 }
-          - { offset: 50,  limit: 50 }
-          - { offset: 100, limit: 50 }
-          - { offset: 150, limit: 50 }
-          - { offset: 200, limit: 50 }
-          - { offset: 250, limit: 50 }
-          - { offset: 300, limit: 50 }
-          - { offset: 350, limit: 50 }
-          - { offset: 400, limit: 50 }
-          - { offset: 450, limit: 50 }
-
+    timeout-minutes: 120
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install Playwright
-        run: npx playwright install --with-deps chromium
-
-      - name: Run scraper (offset ${{ matrix.offset }}, limit ${{ matrix.limit }})
-        run: node scrape.js
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - run: node scrape.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_KEY }}
-          BATCH_SIZE: "5"
-          CONCURRENCY: "2"
-          PER_COURSE_DELAY_MS: "2000"
-          DAYS_AHEAD: "6"
-          CACHE_HOURS: "23"    # Slightly under 24h so the next day's 4am run always re-scrapes
-          COURSE_OFFSET: ${{ matrix.offset }}
-          COURSE_LIMIT: ${{ matrix.limit }}
-
-      - name: Upload scrape log
-        if: always()          # Capture logs even if the scraper exits non-zero
-        uses: actions/upload-artifact@v4
-        with:
-          name: scrape-log-${{ matrix.offset }}
-          path: scrape-output.log
-          if-no-files-found: ignore
-          retention-days: 3
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          BATCH_SIZE: "10"
+          CONCURRENCY: "3"
+          PER_COURSE_DELAY_MS: "4000"
+          DAYS_AHEAD: "7"
