@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
+      - run: npm install && npm install ws
       - run: npx playwright install --with-deps chromium
       - run: node scrape.js
         env:
@@ -24,3 +24,4 @@ jobs:
           CONCURRENCY: "3"
           PER_COURSE_DELAY_MS: "4000"
           DAYS_AHEAD: "7"
+          REGION_FILTER: "London,South East"
