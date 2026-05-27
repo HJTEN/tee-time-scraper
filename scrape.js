@@ -19,6 +19,31 @@ const REGION_FILTER = process.env.REGION_FILTER
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// ---------------------------------------------------------------------------
+// Normalise a raw slot object into { tee_time, spots_available, price }
+// Tries every known field name across BRS, IG, ClubV1, GolfGraffix, GolfNow
+// Returns null if no recognisable time field found
+// ---------------------------------------------------------------------------
+function normaliseSlot(s) {
+  const tee_time =
+    s.time ?? s.tee_time ?? s.TeeTime ?? s.startTime ?? s.start_time ??
+    s.slot_time ?? s.teetime ?? s.teeTime ?? s.BookingTime ?? s.booking_time ??
+    s.StartTime ?? s.slotTime ?? null;
+
+  if (!tee_time) return null;
+
+  const spots_available =
+    s.available_slots ?? s.spaces ?? s.available ?? s.AvailableSpaces ??
+    s.availableSlots ?? s.slots ?? s.Available ?? s.remaining ??
+    s.RemainingSlots ?? s.openSlots ?? s.open_slots ?? null;
+
+  const price =
+    s.price ?? s.Price ?? s.green_fee ?? s.greenFee ?? s.GreenFee ??
+    s.rate ?? s.Rate ?? s.cost ?? s.Cost ?? s.fee ?? s.Fee ?? null;
+
+  return { tee_time: String(tee_time), spots_available, price };
+}
+
 function nextDates(daysAhead) {
   const dates = [];
   for (let i = 0; i < daysAhead; i++) {
@@ -36,7 +61,23 @@ async function upsertTeeTimes(rows) {
   if (error) throw error;
 }
 
-// --- BRS Golf ---
+// ---------------------------------------------------------------------------
+// Extract slots array from any known response shape
+// ---------------------------------------------------------------------------
+function extractSlots(data) {
+  if (Array.isArray(data)) return data;
+  // Common wrappers
+  for (const key of ["slots", "teeSlots", "data", "results", "teeTimes",
+                      "tee_times", "bookings", "times", "availability",
+                      "TeeSlots", "TeeTimes", "Items", "items"]) {
+    if (Array.isArray(data[key])) return data[key];
+  }
+  return [];
+}
+
+// ---------------------------------------------------------------------------
+// BRS Golf
+// ---------------------------------------------------------------------------
 function parseBrsSlug(url) {
   const m = url.match(/brsgolf\.com\/([^/?#]+)/);
   if (!m) return null;
@@ -52,6 +93,7 @@ async function scrapeBrsGolf(course, date) {
   const endpoints = [
     `https://visitors.brsgolf.com/${club}/json/visitor_slots?date=${date}&course_id=${courseId}`,
     `https://visitors.brsgolf.com/${club}/api/visitor_slots?date=${date}&course_id=${courseId}`,
+    `https://www.brsgolf.com/${club}/json/visitor_slots?date=${date}&course_id=${courseId}`,
   ];
 
   for (const url of endpoints) {
@@ -59,29 +101,26 @@ async function scrapeBrsGolf(course, date) {
       const res = await fetch(url, {
         headers: { Accept: "application/json", Referer: course.tee_sheet_url },
       });
-      console.log(`  BRS ${url}: ${res.status}`);
       if (!res.ok) continue;
       const data = await res.json();
-      const slots = Array.isArray(data) ? data : (data.slots ?? data.data ?? []);
-      console.log(`  BRS ${course.name} slots: ${slots.length} (keys: ${slots[0] ? Object.keys(slots[0]).join(",") : "none"})`);
+      const slots = extractSlots(data);
       if (!slots.length) continue;
-      return slots.map((s) => ({
-        course_id: course.id,
-        date,
-        tee_time: s.time ?? s.tee_time ?? s.slot_time ?? s.start_time,
-        spots_available: s.available_slots ?? s.spaces ?? s.available ?? null,
-        price: s.price ?? s.green_fee ?? null,
-        source_provider: "brs",
-        tee_sheet_url: course.tee_sheet_url,
-      })).filter((r) => r.tee_time);
-    } catch (e) {
-      console.log(`  BRS ${course.name} error: ${e.message}`);
+      const rows = slots.flatMap((s) => {
+        const n = normaliseSlot(s);
+        if (!n) return [];
+        return [{ course_id: course.id, date, ...n, source_provider: "brs", tee_sheet_url: course.tee_sheet_url }];
+      });
+      if (rows.length) return rows;
+    } catch {
+      // try next endpoint
     }
   }
   return [];
 }
 
-// --- Intelligent Golf ---
+// ---------------------------------------------------------------------------
+// Intelligent Golf
+// ---------------------------------------------------------------------------
 function parseIntelligentGolfHost(url) {
   const m = url.match(/^https?:\/\/([^.]+)\.intelligentgolf\.co\.uk/);
   return m ? m[1] : null;
@@ -94,6 +133,7 @@ async function scrapeIntelligentGolf(course, date) {
   const endpoints = [
     `https://${club}.intelligentgolf.co.uk/booking/VisitorAPI/GetAvailability?date=${date}`,
     `https://${club}.intelligentgolf.co.uk/visitor/api/slots?date=${date}`,
+    `https://${club}.intelligentgolf.co.uk/booking/api/visitor-slots?date=${date}`,
   ];
 
   for (const url of endpoints) {
@@ -101,29 +141,26 @@ async function scrapeIntelligentGolf(course, date) {
       const res = await fetch(url, {
         headers: { Accept: "application/json", Referer: course.tee_sheet_url },
       });
-      console.log(`  IG ${url}: ${res.status}`);
       if (!res.ok) continue;
       const data = await res.json();
-      const slots = Array.isArray(data) ? data : (data.slots ?? data.teeSlots ?? data.data ?? []);
-      console.log(`  IG ${course.name} slots: ${slots.length} (keys: ${slots[0] ? Object.keys(slots[0]).join(",") : "none"})`);
+      const slots = extractSlots(data);
       if (!slots.length) continue;
-      return slots.map((s) => ({
-        course_id: course.id,
-        date,
-        tee_time: s.time ?? s.tee_time ?? s.startTime ?? s.slot_time,
-        spots_available: s.available_slots ?? s.spaces ?? s.available ?? null,
-        price: s.price ?? s.green_fee ?? s.greenFee ?? null,
-        source_provider: "intelligentgolf",
-        tee_sheet_url: course.tee_sheet_url,
-      })).filter((r) => r.tee_time);
-    } catch (e) {
-      console.log(`  IG ${course.name} error: ${e.message}`);
+      const rows = slots.flatMap((s) => {
+        const n = normaliseSlot(s);
+        if (!n) return [];
+        return [{ course_id: course.id, date, ...n, source_provider: "intelligentgolf", tee_sheet_url: course.tee_sheet_url }];
+      });
+      if (rows.length) return rows;
+    } catch {
+      // try next endpoint
     }
   }
   return [];
 }
 
-// --- ClubV1 ---
+// ---------------------------------------------------------------------------
+// ClubV1
+// ---------------------------------------------------------------------------
 function parseClubV1Host(url) {
   const m = url.match(/^https?:\/\/([^.]+)\.hub\.clubv1\.com/);
   return m ? m[1] : null;
@@ -136,79 +173,89 @@ async function scrapeClubV1(course, date) {
   const endpoints = [
     `https://${club}.hub.clubv1.com/api/TeeSheet?date=${date}`,
     `https://${club}.hub.clubv1.com/Visitors/TeeSheetData?date=${date}`,
-  ]
+    `https://${club}.hub.clubv1.com/api/visitor-slots?date=${date}`,
+  ];
 
   for (const url of endpoints) {
     try {
       const res = await fetch(url, {
         headers: { Accept: "application/json", Referer: course.tee_sheet_url },
       });
-      console.log(`  CV1 ${url}: ${res.status}`);
       if (!res.ok) continue;
       const data = await res.json();
-      const slots = Array.isArray(data) ? data : (data.slots ?? data.teeSlots ?? data.data ?? []);
-      console.log(`  CV1 ${course.name} slots: ${slots.length} (keys: ${slots[0] ? Object.keys(slots[0]).join(",") : "none"})`);
+      const slots = extractSlots(data);
       if (!slots.length) continue;
-      return slots.map((s) => ({
-        course_id: course.id,
-        date,
-        tee_time: s.time ?? s.tee_time ?? s.startTime ?? s.TeeTime,
-        spots_available: s.available_slots ?? s.spaces ?? s.AvailableSpaces ?? null,
-        price: s.price ?? s.Price ?? null,
-        source_provider: "clubv1",
-        tee_sheet_url: course.tee_sheet_url,
-      })).filter((r) => r.tee_time);
-    } catch (e) {
-      console.log(`  CV1 ${course.name} error: ${e.message}`);
+      const rows = slots.flatMap((s) => {
+        const n = normaliseSlot(s);
+        if (!n) return [];
+        return [{ course_id: course.id, date, ...n, source_provider: "clubv1", tee_sheet_url: course.tee_sheet_url }];
+      });
+      if (rows.length) return rows;
+    } catch {
+      // try next endpoint
     }
   }
   return [];
 }
 
-// --- Generic Playwright scraper ---
+// ---------------------------------------------------------------------------
+// Generic Playwright scraper
+// Intercepts XHR/fetch responses that look like tee time data
+// Uses normaliseSlot so any provider shape is handled consistently
+// ---------------------------------------------------------------------------
 async function scrapeGeneric(browser, course, date) {
   const page = await browser.newPage();
   const collected = [];
 
   page.on("response", async (response) => {
     const url = response.url();
-    if (!response.headers()["content-type"]?.includes("application/json")) return;
-    if (!/slot|tee|booking|avail/i.test(url)) return;
+    const ct = response.headers()["content-type"] ?? "";
+    if (!ct.includes("application/json")) return;
+    if (!/slot|tee|booking|avail|timesheet|teesheet|schedule/i.test(url)) return;
+
     try {
       const body = await response.json();
-      const slots = Array.isArray(body) ? body : (body.slots ?? body.data ?? body.teeSlots ?? []);
-      console.log(`  Generic ${course.name} intercepted ${url}: ${slots.length} slots`);
+      const slots = extractSlots(body);
+      if (!slots.length) return;
+
       for (const s of slots) {
-        const teeTime = s.time ?? s.tee_time ?? s.startTime ?? s.slot_time ?? s.TeeTime;
-        if (teeTime) {
-          collected.push({
-            course_id: course.id,
-            date,
-            tee_time: teeTime,
-            spots_available: s.available_slots ?? s.spaces ?? s.available ?? s.AvailableSpaces ?? null,
-            price: s.price ?? s.green_fee ?? s.Price ?? null,
-            source_provider: "generic",
-            tee_sheet_url: course.tee_sheet_url,
-          });
-        }
+        const n = normaliseSlot(s);
+        if (!n) continue;
+        collected.push({
+          course_id: course.id,
+          date,
+          ...n,
+          source_provider: "generic",
+          tee_sheet_url: course.tee_sheet_url,
+        });
       }
     } catch {
-      // not valid JSON or unexpected shape
+      // not parseable — skip
     }
   });
 
   try {
     const pageUrl = course.tee_sheet_url.replace(/date=[\d-]+/, `date=${date}`);
     await page.goto(pageUrl, { waitUntil: "networkidle", timeout: 30000 });
-  } catch (e) {
-    console.log(`  Generic ${course.name} nav error: ${e.message}`);
+  } catch {
+    // navigation timeout — return whatever was intercepted
   } finally {
     await page.close();
   }
 
-  return collected;
+  // Deduplicate by tee_time in case multiple XHR calls returned the same slots
+  const seen = new Set();
+  return collected.filter((r) => {
+    const key = `${r.date}|${r.tee_time}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
+// ---------------------------------------------------------------------------
+// Route to the right scraper
+// ---------------------------------------------------------------------------
 async function scrapeCourseForDate(browser, course, date) {
   const url = course.tee_sheet_url;
 
@@ -227,6 +274,7 @@ async function scrapeCourseForDate(browser, course, date) {
     if (rows.length) return rows;
   }
 
+  // Fall through to generic for all other providers
   return scrapeGeneric(browser, course, date);
 }
 
