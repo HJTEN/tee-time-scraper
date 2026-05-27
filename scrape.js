@@ -13,6 +13,9 @@ const CONCURRENCY = parseInt(process.env.CONCURRENCY || "2", 10);
 const PER_COURSE_DELAY_MS = parseInt(process.env.PER_COURSE_DELAY_MS || "2000", 10);
 const DAYS_AHEAD = parseInt(process.env.DAYS_AHEAD || "7", 10);
 const COURSE_LIMIT = parseInt(process.env.COURSE_LIMIT || "0", 10);
+const REGION_FILTER = process.env.REGION_FILTER
+  ? process.env.REGION_FILTER.split(",").map((r) => r.trim())
+  : null;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -29,12 +32,11 @@ function nextDates(daysAhead) {
 async function upsertTeeTimes(rows) {
   const { error } = await supabase
     .from("tee_times")
-    .upsert(rows, { onConflict: "course_id,tee_date,tee_time" });
+    .upsert(rows, { onConflict: "course_id,date,tee_time" });
   if (error) throw error;
 }
 
 // --- BRS Golf ---
-// Handles visitors.brsgolf.com/CLUB#/course/N and www.brsgolf.com/CLUB/...
 function parseBrsSlug(url) {
   const m = url.match(/brsgolf\.com\/([^/?#]+)/);
   if (!m) return null;
@@ -63,10 +65,12 @@ async function scrapeBrsGolf(course, date) {
       if (!slots.length) continue;
       return slots.map((s) => ({
         course_id: course.id,
-        tee_date: date,
+        date,
         tee_time: s.time ?? s.tee_time ?? s.slot_time ?? s.start_time,
-        available_slots: s.available_slots ?? s.spaces ?? s.available ?? null,
+        spots_available: s.available_slots ?? s.spaces ?? s.available ?? null,
         price: s.price ?? s.green_fee ?? null,
+        source_provider: "brs",
+        tee_sheet_url: course.tee_sheet_url,
       })).filter((r) => r.tee_time);
     } catch {
       // try next endpoint
@@ -76,7 +80,6 @@ async function scrapeBrsGolf(course, date) {
 }
 
 // --- Intelligent Golf ---
-// Handles CLUB.intelligentgolf.co.uk/visitorbooking/
 function parseIntelligentGolfHost(url) {
   const m = url.match(/^https?:\/\/([^.]+)\.intelligentgolf\.co\.uk/);
   return m ? m[1] : null;
@@ -102,10 +105,12 @@ async function scrapeIntelligentGolf(course, date) {
       if (!slots.length) continue;
       return slots.map((s) => ({
         course_id: course.id,
-        tee_date: date,
+        date,
         tee_time: s.time ?? s.tee_time ?? s.startTime ?? s.slot_time,
-        available_slots: s.available_slots ?? s.spaces ?? s.available ?? null,
+        spots_available: s.available_slots ?? s.spaces ?? s.available ?? null,
         price: s.price ?? s.green_fee ?? s.greenFee ?? null,
+        source_provider: "intelligentgolf",
+        tee_sheet_url: course.tee_sheet_url,
       })).filter((r) => r.tee_time);
     } catch {
       // try next endpoint
@@ -115,7 +120,6 @@ async function scrapeIntelligentGolf(course, date) {
 }
 
 // --- ClubV1 ---
-// Handles CLUB.hub.clubv1.com/Visitors/Booking and /TeeSheet
 function parseClubV1Host(url) {
   const m = url.match(/^https?:\/\/([^.]+)\.hub\.clubv1\.com/);
   return m ? m[1] : null;
@@ -141,10 +145,12 @@ async function scrapeClubV1(course, date) {
       if (!slots.length) continue;
       return slots.map((s) => ({
         course_id: course.id,
-        tee_date: date,
+        date,
         tee_time: s.time ?? s.tee_time ?? s.startTime ?? s.TeeTime,
-        available_slots: s.available_slots ?? s.spaces ?? s.AvailableSpaces ?? null,
+        spots_available: s.available_slots ?? s.spaces ?? s.AvailableSpaces ?? null,
         price: s.price ?? s.Price ?? null,
+        source_provider: "clubv1",
+        tee_sheet_url: course.tee_sheet_url,
       })).filter((r) => r.tee_time);
     } catch {
       // try next endpoint
@@ -170,10 +176,12 @@ async function scrapeGeneric(browser, course, date) {
         if (teeTime) {
           collected.push({
             course_id: course.id,
-            tee_date: date,
+            date,
             tee_time: teeTime,
-            available_slots: s.available_slots ?? s.spaces ?? s.available ?? s.AvailableSpaces ?? null,
+            spots_available: s.available_slots ?? s.spaces ?? s.available ?? s.AvailableSpaces ?? null,
             price: s.price ?? s.green_fee ?? s.Price ?? null,
+            source_provider: "generic",
+            tee_sheet_url: course.tee_sheet_url,
           });
         }
       }
@@ -183,10 +191,7 @@ async function scrapeGeneric(browser, course, date) {
   });
 
   try {
-    const pageUrl = course.tee_sheet_url.replace(
-      /date=[\d-]+/,
-      `date=${date}`
-    );
+    const pageUrl = course.tee_sheet_url.replace(/date=[\d-]+/, `date=${date}`);
     await page.goto(pageUrl, { waitUntil: "networkidle", timeout: 30000 });
   } catch {
     // navigation timeout or error — return whatever was intercepted
@@ -265,18 +270,33 @@ function chunk(array, size) {
 async function fetchCourses() {
   let query = supabase
     .from("golf_courses")
-    .select("id,name,tee_sheet_url")
+    .select("id,name,tee_sheet_url,region")
     .order("created_at", { ascending: true });
+
+  if (REGION_FILTER) {
+    query = query.in("region", REGION_FILTER);
+  }
+
   if (COURSE_LIMIT > 0) query = query.limit(COURSE_LIMIT);
 
   const { data, error } = await query;
   if (error) throw error;
+
+  console.log(
+    `Fetched ${data.length} courses${REGION_FILTER ? ` (region: ${REGION_FILTER.join(", ")})` : ""}`
+  );
   return data;
 }
 
 async function main() {
   const dates = nextDates(DAYS_AHEAD);
   const courses = await fetchCourses();
+
+  if (!courses.length) {
+    console.log("No courses to scrape. Check REGION_FILTER and golf_courses.region values.");
+    return;
+  }
+
   const batches = chunk(courses, BATCH_SIZE);
 
   for (let i = 0; i < batches.length; i += CONCURRENCY) {
